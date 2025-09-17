@@ -22,6 +22,7 @@ x_1, x_2 \ge 0
 $$
 
 
+
 (b)
 
 (i) **can** be easily incorporated into the linear program formulation, while (ii) **cannot**. 
@@ -64,6 +65,38 @@ $$
 
 
 ##### Question 2
+
+(a)
+
+$p_k: \text{daily power consume of the k-th car, and we have: } p_1 = 10, p_2 = 8, p_3 = 13, p_4 = 15, p_5 = 9$
+
+$d_k: \text{total mileage traveled of the k-th car, and we have: } d_1 = 60, d_2 = 55, d_3 = 75, d_4 = 80, d_5 = 64$
+
+$m, b: \text{linear program parameters}$
+
+$\text{objective function:}$
+$$
+\min(\Sigma^{5}_{k=1}y_k)
+$$
+$\text{constraints:}$
+$$
+- y_k \le d_k - (mp_k + b) \le y_k,\quad k = 1, 2, 3, 4, 5 \\
+m, b\ge 0
+$$
+
+
+
+(b)
+
+codes:
+
+
+
+report:
+
+
+
+##### Question 3
 
 
 
