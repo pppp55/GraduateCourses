@@ -1,0 +1,119 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, color, enumitem, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings}
+\title{\textbf{Assignment 1}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}
+    \item There are two possible policies $\pi_1$ and $\pi_2$, while:
+    \begin{gather}
+        \notag \pi_1(s_0) = a_1, \pi_1(s_1) = a_0, \pi_1(s_2) = a_0, \pi_1(s_3) = a_0 \\
+        \notag \pi_2(s_0) = a_2, \pi_2(s_1) = a_0, \pi_2(s_2) = a_0, \pi_2(s_3) = a_0
+    \end{gather}
+    \item The optimal value function for each state is:
+    \begin{gather}
+        \notag V^*(s_0) = \max\{\gamma V^*(s_1), \gamma V^*(s_2)\} \\
+        \notag V^*(s_1) = \gamma(p V^*(s_3) + (1-p)V^*(s_1)) \\
+        \notag V^*(s_2) = 1 + \gamma(q V^*(s_3) + (1-q)V^*(s_0)) \\
+        \notag V^*(s_3) = 10 + \gamma V^*(s_0)
+    \end{gather}
+    \item \textbf{Yes}. When $p = 0$, we have:
+    \begin{gather}
+        \notag V^*(s_1) = \gamma V^*(s_1) \Rightarrow V^*(s_1) = 0 \\
+        \notag V^*(s_2) = 1 + \gamma(q V^*(s_3) + (1-q)V^*(s_0)) \ge 1 \\
+        \notag V^*(s_0) = \max\{\gamma V^*(s_1), \gamma V^*(s_2)\} = \gamma V^*(s_2)
+    \end{gather}
+    Thus, in this case, $\forall \gamma \in [0, 1)$ and $q \in [0, 1], \pi^*(s_0) = a_2$
+    \item \textbf{No}. When $p = 1$ and $\gamma < \frac{1}{V^*(s_3)}$, we have:
+    \begin{gather}
+        \notag V^*(s_1) = \gamma V^*(s_3) < 1 \\
+        \notag V^*(s_2) = 1 + \gamma(q V^*(s_3) + (1-q)V^*(s_0)) \ge 1 \\
+        \notag V^*(s_0) = \max\{\gamma V^*(s_1), \gamma V^*(s_2)\} = \gamma V^*(s_2)
+    \end{gather}
+    Thus, in this case, $\forall q \in [0, 1], \pi^*(s_0) = a_2$. 
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}
+    \item  The discount factor $\gamma$ balances the short-term and long-term rewards. And with $\gamma < 1$, it can guarantee that an optimal value function $V^*(s)$ exists and is finite for all states $s \in \mathcal S$
+    \item  While SSPs exists a finite path from $s$ to $s_G$ and the solution policy in SSPs should instead minimize the expected cost to reach a goal state, it does not need a discount factor to ensure that an optimal value function exists and is finite for all states.
+    \item  The optimal value function for SSPs is:
+    \begin{gather}
+        \notag V^*(s) =
+        \begin{cases}
+            \min\limits_{a \in A} \left\{C(s, a) + \gamma \sum\limits_{s'\in S}P(s'|s, a) V^*(s')\right\}, & s \notin G \\
+            0, & s \in G
+        \end{cases}
+    \end{gather}
+    \item  With an MDP $\mathcal M = <S, s_0, A, C, P>$ with discount factor $\gamma \in [0, 1)$, we can construct an SSP $\mathcal S = <S', s_0, G, A, C', P'>$ as follows:
+    \begin{align}
+        \notag & S' = S \cup G \\
+        \notag & s_0 \in S \text{ is the initial state} \\
+        \notag & G \text{ is the set of goal states} \\
+        \notag & A \text{ is the finite action space} \\
+        \notag & C' =
+        \begin{cases}
+            C(s, a), & s \notin G \\
+            0, & s \in G
+        \end{cases}\\
+        \notag & P'(s'| s, a) =
+        \begin{cases}
+            \alpha P(s'| s, a), & s \notin G, s' \notin G \\
+            1 - \alpha, & s \notin G, s' \in G \\
+            0, & s \in G, s' \notin G \\
+            1, & s \in G, s' \in G
+        \end{cases}
+    \end{align}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}
+    \item  \textbf{$A_2$ and $A_4$}. It's easy to calculate that:
+    \begin{gather}
+        \notag \hat\mu_0(1) = 0, \hat\mu_0(2) = 0, \hat\mu_0(3) = 0, \hat\mu_0(4) = 0 \\
+        \notag \hat\mu_1(1) = 3, \hat\mu_1(2) = 0, \hat\mu_1(3) = 0, \hat\mu_1(4) = 0 \\
+        \notag \hat\mu_2(1) = 3, \hat\mu_2(2) = 2, \hat\mu_2(3) = 0, \hat\mu_2(4) = 0 \\
+        \notag \hat\mu_3(1) = 2, \hat\mu_3(2) = 2, \hat\mu_3(3) = 0, \hat\mu_3(4) = 0 \\
+        \notag \hat\mu_4(1) = 2, \hat\mu_4(2) = 2, \hat\mu_4(3) = 1, \hat\mu_4(4) = 0
+    \end{gather}
+    So we have:
+    \begin{gather}
+        \notag \text{argmax} \mu_0 = \{1, 2, 3, 4\}, \quad \text{argmax} \mu_1 = 1, \\
+        \notag \text{argmax} \mu_2 = 1, \quad \text{argmax} \mu_3 \in \{1, 2\}, \quad \text{argmax} \mu_4 \in \{1, 2\} \\
+        \notag A_2 = 2 \neq \text{argmax} \mu_1, \quad A_4 = 3 \neq \text{argmax} \mu_3
+    \end{gather}
+    Thus, $A_2$ and $A_4$ are definitely exploratory.
+    \item  As the calculation above, we have:
+    \begin{gather}
+        \notag A_1 = 1 = \text{argmax} \mu_0, \quad A_3 = 1 = \text{argmax} \mu_2, \quad A_5 = 2 = \text{argmax} \mu_4
+    \end{gather}
+    Thus, $A_1$, $A_3$ and $A_5$ are possibly exploratory.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}
+    \item  ***
+    \item  ***
+\end{enumerate}
+\end{problem}
+
+\end{document}

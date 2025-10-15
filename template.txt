@@ -26,6 +26,7 @@
 \begin{problem}
 \begin{enumerate}[label = (\alph*)]
     \item  ***
+\end{enumerate}
 \end{problem}
 
 \end{document}
