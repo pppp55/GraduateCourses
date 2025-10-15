@@ -25,7 +25,7 @@ iris = load_iris()
 
 
 # Determine feature matrix X and taget array Y
-X = iris.data[:, :3]
+X = iris.data[:, [0, 1, 3]]
 Y = iris.target
 # print(X.shape)
 # print(Y.shape)
