@@ -111,8 +111,31 @@
 \newpage
 \begin{problem}
 \begin{enumerate}
-    \item  ***
-    \item  ***
+    \item  Follow the hint, we have:
+    \begin{gather}
+        \notag |\hat \mu_1(k - 1) - \hat \mu_2(k - 1)| \le 2w(k - 1) = 2\sqrt{\frac{2\log(T)}{k - 1}}
+    \end{gather}
+    By using the reverse triangle inequality, we have:
+    \begin{align}
+        \notag \Delta & = |\mu_1 - \mu_2| \\
+        \notag & \le |\hat \mu_1(k - 1) - \hat \mu_2(k - 1)| + |\hat \mu_1(k - 1) - \mu_1| + |\hat \mu_2(k - 1) - \mu_2| \\
+        \notag & \le 2\sqrt{\frac{2\log(T)}{k - 1}} + |\hat \mu_1(k - 1) - \mu_1| + |\hat \mu_2(k - 1) - \mu_2|
+    \end{align}
+    By using the \emph{Chebyshev's Inequality}, we have:
+    \begin{gather}
+        \notag P\left (|\hat \mu_1(k - 1) - \mu_1| \le \sqrt{\frac{2\log(T)}{k - 1}}\right ) \ge 1 - \frac{1}{2\log(T)} \\
+        \notag P\left (|\hat \mu_2(k - 1) - \mu_2| \le \sqrt{\frac{2\log(T)}{k - 1}}\right ) \ge 1 - \frac{1}{2\log(T)}
+    \end{gather}
+    Thus, with the probability of $1 - \frac{1}{2\log(T)}$ (with a large $T$, the probability will be very high), we have:
+    \begin{gather}
+        \notag \Delta \le 2\sqrt{\frac{2\log(T)}{k - 1}} + 2\sqrt{\frac{2\log(T)}{k - 1}} = 4\sqrt{\frac{2\log(T)}{k - 1}} \\
+        \notag \Rightarrow \Delta \le 4\sqrt{\frac{2\log(T)}{k - 1}} \\
+        \notag \Rightarrow k \le \frac{32\log(T)}{\Delta^2} + 1
+    \end{gather}
+    \item  Using result from part (1), we have:
+    \begin{gather}
+        \notag \bar R_T = K \cdot \Delta \le \Delta + \frac{32\log(T)}{\Delta}
+    \end{gather}
 \end{enumerate}
 \end{problem}
 
