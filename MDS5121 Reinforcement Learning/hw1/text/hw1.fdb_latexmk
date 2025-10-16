@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1760621086.00889 "d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/hw1/text/hw1.tex" "hw1.pdf" "hw1" 1760621089.21573 0
+["pdflatex"] 1760631742.78607 "d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/hw1/text/hw1.tex" "hw1.pdf" "hw1" 1760631745.3773 0
   "c:/Windows/Fonts/msyh.ttc" 1651900759 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/tools/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1757555838 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/tools/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1757557535 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -157,10 +157,10 @@
   "c:/tools/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1757601827 5574057 72d12c42828dd29cd2b63e4ce1dfbbfc ""
   "c:/tools/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1757602350 3605778 d277370de469639aac81249403a28ef0 ""
   "c:/tools/texlive/2025/texmf.cnf" 1757601790 713 e69b156964470283e0530f5060668171 ""
-  "d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/hw1/text/hw1.tex" 1760621084 6731 f019be52ccbd9953e431ec2234454302 ""
-  "hw1.aux" 1760621089 229 6f4a50277a169073d97699ff07a409d4 "pdflatex"
-  "hw1.out" 1760621087 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "hw1.tex" 1760621084 6731 f019be52ccbd9953e431ec2234454302 ""
+  "d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/hw1/text/hw1.tex" 1760631742 6779 2c4fcd233317f81e08d4d7ed9eceed10 ""
+  "hw1.aux" 1760631745 229 6f4a50277a169073d97699ff07a409d4 "pdflatex"
+  "hw1.out" 1760631743 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "hw1.tex" 1760631742 6779 2c4fcd233317f81e08d4d7ed9eceed10 ""
   (generated)
   "hw1.aux"
   "hw1.log"
