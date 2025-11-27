@@ -1,0 +1,174 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings, subfigure, siunitx}
+\usepackage{grffile}
+\title{\textbf{Homework 5}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  Yes. \begin{gather}
+        \notag \text{Let } x, y \in S, \\
+        \notag \text{where } x = x_1 + x_2, y = y_1 + y_2, \\
+        \notag x_1, y_1 \in S_1, x_2, y_2 \in S_2
+    \end{gather}
+    So we have:
+    \begin{align}
+        \notag \lambda x + (1 - \lambda) y &= \lambda (x_1 + x_2) + (1 - \lambda)(y_1 + y_2) \\
+        \notag &= \lambda x_1 + (1 - \lambda) y_1 + \lambda x_2 + (1 - \lambda) y_2
+    \end{align}
+    Since $S_1, S_2$ are convex sets, we have:
+    \begin{gather}
+        \notag \lambda x_1 + (1 - \lambda) y_1 \in S_1, \\
+        \notag \lambda x_2 + (1 - \lambda) y_2 \in S_2
+    \end{gather}
+    Thus, we have:
+    \begin{gather}
+        \notag \lambda x + (1 - \lambda) y \in S
+    \end{gather}
+    Therefore, $S$ is a convex set.
+    \item  Yes. \begin{gather}
+        \notag ax^2 + 2x + \frac{1}{a} = {(\sqrt{a} x + \frac{1}{\sqrt{a}})}^2 \ge 0 \\
+        \notag \Rightarrow x \in \mathbb{R}
+    \end{gather}
+    Thus, $\{x \in \mathbb{R} : ax^2 + 2x + \frac{1}{a} \ge 0 \}$ is a convex set.
+    \item  Yes. \begin{align*}
+        \notag \lambda y_1 + (1 - \lambda) y_2 & \ge \lambda f(x_1) + (1 - \lambda) f(x_2) \\
+        \notag & \ge f(\lambda x_1 + (1 - \lambda) x_2)
+    \end{align*}
+    Thus, $\{(y, x) \in \mathbb{R} \times \mathbb{R}^n : y \ge f(x) \}$ is a convex set.
+    \item  No. Let $f(x) = x^2, y = x^2$, so point $(1, 1)$ and $(−1, 1)$ are in the set, but point $(0, 2)$ is not in the set. \\
+    Thus, the set $\{(x, y) \in \mathbb{R}^n : y = f(x) \}$ is not a convex set.
+    \item  No. Hessian matrix:$H = \begin{bmatrix}
+            4 & -2 & 8 \\
+            -2 & 6 & 4 \\
+            8 & 4 & -10
+        \end{bmatrix}$ is not positive semidefinite. \\
+    Thus, the set $\{x \in \mathbb{R}^3 : x^T A x \le 0 \}$ is not a convex set.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  Yes.
+    \begin{align}
+        \notag & \lambda f(x) + (1 - \lambda) f(y) \\
+        \notag & = \lambda {||x||}_1 + (1 - \lambda) {||y||}_1 \\
+        \notag & \ge {||\lambda x + (1 - \lambda) y||}_1 \\
+        \notag & = f(\lambda x + (1 - \lambda) y)
+    \end{align}
+    Thus, $f(x) = {||x||}_1$ is a convex function.
+    \item  Yes.
+    \begin{align}
+        \notag & \lambda f(x) + (1 - \lambda) f(y) \\
+        \notag & = \sum_{i=1}^d [\lambda f_i(x_i) + (1 - \lambda) f_i(y_i)] \\
+        \notag & \ge \sum_{i=1}^d f_i(\lambda x_i + (1 - \lambda) y_i) \\
+        \notag & = f(\lambda x + (1 - \lambda) y)
+    \end{align}
+    Thus, $f$ is a convex function.
+    \item  Yes.
+    \begin{align}
+        \notag & \lambda f(x) + (1 - \lambda) f(y) \\
+        \notag & = f(\lambda x) + f((1 - \lambda) y) \\
+        \notag & \ge f(\lambda x + (1 - \lambda) y)
+    \end{align}
+    Thus, $f$ is a convex function.
+    \item  Yes.
+    \begin{align}
+        \notag & \lambda f(x) + (1 - \lambda) f(y) \\
+        \notag & = \lambda {|x|}^{\frac{3}{2}} + (1 - \lambda) {|y|}^{\frac{3}{2}} \\
+        \notag & \ge {|\lambda x + (1 - \lambda) y|}^{\frac{3}{2}} \\
+        \notag & = f(\lambda x + (1 - \lambda) y)
+    \end{align}
+    Thus, $f(x) = {|x|}^{\frac{3}{2}}$ is a convex function.
+    \item  Yes.
+    \begin{align}
+        \notag f'(x) = \frac{1}{\sqrt{1 + x^2}} + 2x, \quad f''(x) = -\frac{x}{(1 + x^2)^{\frac{3}{2}}} + 2 \ge 0
+    \end{align}
+    Thus, $f(x) = \ln({x + \sqrt{1 + x^2}}) + x^2$ is a convex function.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  \begin{align}
+        \notag \frac{\partial f}{\partial \beta_0} & = 2 \sum_{i=1}^n (\beta_0 + \beta^T x_i - y_i) = 2 n \beta_0 \\
+        \notag \frac{\partial f}{\partial \beta} & = 2 \sum_{i=1}^n (\beta_0 + \beta^T x_i - y_i) x_i + 2 \lambda \beta = 2 \beta_0 \sum_{i=1}^n x_i \\
+    \end{align}
+    Let $\frac{\partial f}{\partial \beta_0} = 0, \frac{\partial f}{\partial \beta} = 0$, we have: $\beta_0^\star = 0$
+    \item  \begin{align}
+        \notag \tilde{f}(\beta_0 - \beta^T q + r, \beta) & = \sum_{i=1}^n {[\beta_0 - \beta^T q + r + \beta^T (x_i + q) - y_i]}^2 \\
+        \notag & = \sum_{i=1}^n {(\beta_0 + \beta^T x_i - y_i + r)}^2 \\
+        \notag & = f(\beta_0, \beta)
+    \end{align}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}
+    \item  Let $f = 3 x_1^2 + 4 x_2^2 + 2 x_1 x_2$, we have:
+    \begin{align}
+        \notag f & = 3 x_1^2 + 4 x_2^2 + 2 x_1 x_2 \\
+        \notag \nabla f = & \begin{bmatrix}
+            6 x_1 + 2 x_2 \\
+            2 x_1 + 8 x_2
+        \end{bmatrix} \\
+        \notag \nabla^2 f = & \begin{bmatrix}
+            6 & 2 \\
+            2 & 8
+        \end{bmatrix}
+    \end{align}
+    Since $\nabla^2 f$ is positive definite, $f$ is a convex function. \\
+    Let $g = \sqrt{1 + x_1^2 + x_2^2} + x_1 - 2$, we have:
+    Since $\sqrt{1 + x_1^2 + x_2^2}$ is a convex function and $x_1 - 2$ is a linear function, $g$ is a convex function. \\
+    Thus, the optimization problem is a convex optimization problem.
+    \item  KKT conditions:
+    \begin{gather}
+        \notag \nabla f + \lambda \nabla g = 0 \\
+        \notag \lambda g = 0 \\
+        \notag \lambda \ge 0, g \le 0
+    \end{gather}
+    \item  (i) When $\lambda = 0$, we have:
+    \begin{gather}
+        \notag \nabla f + \lambda \nabla g = 0 \\
+        \notag \Rightarrow \begin{bmatrix}
+            6 x_1 + 2 x_2 \\
+            2 x_1 + 8 x_2
+        \end{bmatrix} = 0 \\
+        \notag \Rightarrow (x_1, x_2) = (0, 0)
+    \end{gather}
+    Since it is a convex optimization problem, $(x_1, x_2) = (0, 0)$ is the global minimum. \\
+    $(0, 0)$ is the only KKT point.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}
+    \item  The solution and number of iterations are: \\
+    \begin{tabular}{l S[table-format=1.8] S[table-format=2]}
+        {Method} & {Approximate Solution} & {Iterations} \\
+        \midrule
+        Bisection Method         & 0.6931 & 14 \\
+        Golden Section Method    & 0.6931 & 20 \\
+        \bottomrule
+    \end{tabular}
+\end{enumerate}
+\end{problem}
+
+\end{document}
