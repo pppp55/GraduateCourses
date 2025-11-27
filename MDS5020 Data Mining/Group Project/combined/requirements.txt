@@ -1,0 +1,10 @@
+fastapi==0.110.2
+uvicorn[standard]==0.29.0
+scikit-learn==1.7.1
+pandas==2.2.2
+numpy==1.26.4
+nltk==3.8.1
+emoji==2.12.1
+joblib==1.4.2
+openpyxl==3.1.5
+jieba==0.42.1

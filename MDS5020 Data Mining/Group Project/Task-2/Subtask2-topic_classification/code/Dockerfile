@@ -6,7 +6,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # 安装依赖并预下载jieba词典
-RUN pip install --no-cache-dir -r requirements.txt && \
+RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     python -c "import jieba; jieba.initialize()"
 
 # 复制应用代码

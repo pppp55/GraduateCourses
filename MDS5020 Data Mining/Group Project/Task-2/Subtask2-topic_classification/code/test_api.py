@@ -17,7 +17,7 @@ def test_api():
     test_data = {"text": "太极实业:2022年度独立董事述职报告"}
     # test_data = "太极实业:2022年度独立董事述职报告"
 
-    response = requests.post(f"{base_url}/predict", json=test_data)
+    response = requests.post(f"{base_url}/predict_topic", json=test_data)
     if response.status_code == 200:
         result = response.json()
         print(f"预测结果: {json.dumps(result, indent=2, ensure_ascii=False)}")
