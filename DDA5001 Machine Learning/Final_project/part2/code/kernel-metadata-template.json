@@ -1,0 +1,15 @@
+{
+  "id": "your-id/DDA5001-project-part2",
+  "title": "DDA5001 Final Project Part 2",
+  "code_file": "./main.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": ["your-id/finetune-code"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
