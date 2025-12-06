@@ -19,7 +19,9 @@
 
 \begin{problem}
 \begin{enumerate}[label = (\alph*)]
-    \item \begin{align} \notag *** \end{align}
+    \item \begin{align}
+        \notag ***
+    \end{align}
 \end{enumerate}
 \end{problem}
 
