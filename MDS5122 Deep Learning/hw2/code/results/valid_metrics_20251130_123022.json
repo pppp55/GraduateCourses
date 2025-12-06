@@ -1,0 +1,9 @@
+{
+  "split": "valid",
+  "timestamp": "2025-11-30T12:30:22Z",
+  "avg_loss_per_token": 5.782365643615299,
+  "token_accuracy": 0.06645375183914264,
+  "eos_accuracy": 0.125,
+  "num_tokens": 162491,
+  "num_examples": 250
+}

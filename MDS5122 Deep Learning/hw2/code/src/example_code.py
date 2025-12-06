@@ -28,17 +28,19 @@ except Exception:
 #  Config
 # ======================
 
-UTT2_S3_PATH = "YOUR_UTT2_S3_PATH"
-UTT2_TEXT_EMB_PATH = "YOUR_UTT2_TEXT_EMB_PATH"
-UTT2_WHISPER_PATH = "YOUR_UTT2_WHISPER_PATH"
-COSYVOICE_MODEL_DIR = "YOUR_COSYVOICE_MODEL_DIR"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DATA_ROOT = PROJECT_ROOT / "data"
+UTT2_S3_PATH = DATA_ROOT / "s3_tokens.pt"
+UTT2_TEXT_EMB_PATH = DATA_ROOT / "text_emb.pt"
+UTT2_WHISPER_PATH = DATA_ROOT / "speech_feat.pt"
+COSYVOICE_MODEL_DIR = "iic/CosyVoice-300M"
 
 S3_PAD_ID = 0
 S3_VOCAB_SIZE = 4096
 BATCH_SIZE = 8
 LR = 1e-4
 WEIGHT_DECAY = 1e-3
-NUM_EPOCHS = 10
+NUM_EPOCHS = 20
 GRAD_CLIP = 1.0
 TRAIN_RATIO = 0.95
 IGNORE_ID = -100
@@ -50,8 +52,22 @@ IGNORE_ID = -100
 
 
 def load_cosyvoice_llm(device):
+    print(f"Loading CosyVoice model from {COSYVOICE_MODEL_DIR} on {device} ...")
     cosy = CosyVoice(COSYVOICE_MODEL_DIR)
     return cosy.model.llm.llm
+
+
+def describe_hardware(device: torch.device) -> str:
+    if device.type == "cuda" and torch.cuda.is_available():
+        idx = device.index or 0
+        name = torch.cuda.get_device_name(idx)
+        capability = torch.cuda.get_device_capability(idx)
+        return f"{device} ({name}, sm_{capability[0]}{capability[1]})"
+    return str(device)
+
+
+def count_trainable_parameters(model: nn.Module) -> int:
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 
 class SimpleTextSpeechAggregator(nn.Module):
@@ -357,6 +373,12 @@ def collate_fn(batch):
 
 
 def load_samples():
+    print(
+        "Loading data from:\n"
+        f"  S3 tokens : {UTT2_S3_PATH}\n"
+        f"  Text emb  : {UTT2_TEXT_EMB_PATH}\n"
+        f"  Whisper   : {UTT2_WHISPER_PATH}"
+    )
     utt2s3 = torch.load(UTT2_S3_PATH, map_location="cpu")
     utt2text = torch.load(UTT2_TEXT_EMB_PATH, map_location="cpu")
     utt2whisper = torch.load(UTT2_WHISPER_PATH, map_location="cpu")
@@ -398,6 +420,7 @@ def load_samples():
                 "s3_tokens": s3_tokens,
             }
         )
+    print(f"Loaded {len(samples)} usable samples (from {len(keys)} matched ids)")
     return samples
 
 
@@ -618,13 +641,20 @@ def predict_s3(model, text_emb, speech_last, speech_mid, device):
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {describe_hardware(device)}")
 
     samples = load_samples()
+    if not samples:
+        print("No samples available. Please verify the *.pt paths in DATA_ROOT.")
+        return
     random.shuffle(samples)
 
     n_train = int(len(samples) * TRAIN_RATIO)
     train_samples = samples[:n_train]
     valid_samples = samples[n_train:]
+    print(
+        f"Split {len(samples)} samples -> train={len(train_samples)}, valid={len(valid_samples)}"
+    )
 
     train_ds = S3Dataset(train_samples)
     valid_ds = S3Dataset(valid_samples)
@@ -659,6 +689,11 @@ def main():
         s3_pad_id=S3_PAD_ID,
         freeze_llm=True,
     ).to(device)
+
+    print(
+        "Model summary: "
+        f"text_dim={text_dim}, hidden_dim={text_dim}, trainable_params={count_trainable_parameters(model):,}"
+    )
 
     trainable_params = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(trainable_params, lr=LR, weight_decay=WEIGHT_DECAY)
