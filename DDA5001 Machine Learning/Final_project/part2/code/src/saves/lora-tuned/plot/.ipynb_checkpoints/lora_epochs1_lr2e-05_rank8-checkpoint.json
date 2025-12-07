@@ -1,0 +1,1 @@
+{"optimization_method": "lora", "num_epochs": 1, "learning_rate": 2e-05, "lora_rank": 8, "train_steps": [10, 20, 30, 40, 50], "train_losses": [0.9964337348937988, 1.0624358654022217, 0.5601005554199219, 0.825181245803833, 0.8144096732139587], "val_steps": [50], "val_losses": [0.8356568376932826]}

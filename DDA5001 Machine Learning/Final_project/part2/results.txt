@@ -1,0 +1,14 @@
+lora
+	num_epochs=1, learning_rate=2e-5, lora_rank=8,  max_memory_allocated=4.89GB, training_time=1125.71s, acc=12.80%
+	num_epochs=1, learning_rate=2e-5, lora_rank=16, max_memory_allocated=4.97GB, training_time=1121.43s, acc=12.00%
+	num_epochs=1, learning_rate=2e-5, lora_rank=4,  max_memory_allocated=4.85GB, training_time=1125.74s, acc=13.00%
+
+sgd
+	num_epochs=1, learning_rate=1e-3, lora_rank=8,  max_memory_allocated=5.68GB, training_time=798.81s,  acc=10.80%
+	num_epochs=1, learning_rate=1e-4, lora_rank=8,  max_memory_allocated=5.68GB, training_time=821.06s,  acc=13.20%
+	num_epochs=2, learning_rate=1e-4, lora_rank=8,  max_memory_allocated=5.68GB, training_time=1610.66s, acc=14.40%
+
+adam
+	num_epochs=1, learning_rate=2e-5, lora_rank=8,  max_memory_allocated=7.92GB, training_time=816.83s,  acc=12.60%
+	num_epochs=1, learning_rate=1e-5, lora_rank=8,  max_memory_allocated=7.92GB, training_time=827.65s,  acc=13.20%
+	num_epochs=2, learning_rate=5e-6, lora_rank=8,  max_memory_allocated=7.92GB, training_time=1627.69s, acc=12.60%
