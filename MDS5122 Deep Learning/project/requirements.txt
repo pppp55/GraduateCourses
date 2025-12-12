@@ -1,0 +1,10 @@
+torch
+torchvision
+diffusers
+peft
+safetensors
+numpy
+Pillow
+opencv-python
+tqdm
+matplotlib

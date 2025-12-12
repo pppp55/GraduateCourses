@@ -1,0 +1,9 @@
+no-lora
+Samples evaluated : 1500
+Average SSIM      : 0.4830
+Average PSNR (dB) : 14.76
+
+use-lora
+Samples evaluated : 1500
+Average SSIM      : 0.5931
+Average PSNR (dB) : 18.00
