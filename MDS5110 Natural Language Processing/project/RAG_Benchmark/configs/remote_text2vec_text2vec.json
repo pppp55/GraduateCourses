@@ -1,0 +1,20 @@
+{
+  "run_name": "remote_text2vec_text2vec",
+  "data": {
+    "queries_path": "data/query_law_ids_validated.json",
+    "law_corpus_path": "data/法律法规.jsonl"
+  },
+  "retriever": {
+    "type": "remote",
+    "top_k": 10,
+    "endpoint": "http://127.0.0.1:8006/retrieve",
+    "timeout": 20.0
+  },
+  "outputs": {
+    "root": "outputs"
+  },
+  "metadata": {
+    "retrieval_profile": "text2vec",
+    "variant": "text2vec"
+  }
+}
