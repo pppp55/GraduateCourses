@@ -1,0 +1,19 @@
+\section{Challenges and Open Problems}
+
+Despite significant progress, reinforcement learning based recommendation systems still face several fundamental challenges that limit their broader adoption and practical impact.
+
+\subsection{Reward Design and Long-term Alignment}
+
+Designing reward functions that faithfully reflect long-term user value remains a central challenge. Observable signals such as clicks or dwell time are often sparse and biased, and may not correlate with long-term satisfaction or retention. While long-horizon optimization mitigates short-term bias, defining rewards that align business objectives with user well-being remains an open problem.
+
+\subsection{Efficient and Safe Exploration}
+
+Exploration is inherently costly in recommendation systems, as suboptimal actions directly affect user experience. Although deep exploration methods improve long-term learning efficiency, they often rely on high-quality simulators. How to balance efficient learning, safety constraints, and real-world deployment risks remains unresolved.
+
+\subsection{Scalability and Deployment Constraints}
+
+Real-world recommendation systems operate at massive scale, with millions of users and items. Many RL algorithms face practical bottlenecks in computation, latency, and system integration. Bridging the gap between algorithmic advances and production-ready systems is still a major engineering challenge.
+
+\subsection{Evaluation and Reproducibility}
+
+Reliable evaluation of RL-based recommenders is difficult due to distribution shift and feedback loops. Simulator-based evaluation alleviates some issues, but reproducibility and generalization across domains remain limited. Establishing standardized benchmarks and evaluation protocols is an important direction for future research.

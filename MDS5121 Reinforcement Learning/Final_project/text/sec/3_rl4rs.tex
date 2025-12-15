@@ -1,0 +1,39 @@
+\section{A Taxonomy of Reinforcement Learning-based Recommendation Systems}
+
+Existing reinforcement learning-based recommendation systems (RLRS) differ significantly in how they formulate the learning objective, represent user states, and handle exploration under large action spaces. In this section, we present a concise taxonomy that categorizes prior work along three orthogonal dimensions: learning paradigms, state representation strategies, and exploration mechanisms.
+
+\subsection{Learning Paradigms}
+
+From an algorithmic perspective, RL-based recommendation methods can be broadly categorized according to their underlying learning paradigms.
+
+\subsubsection{Value-based Methods}
+
+Value-based approaches estimate the expected return of state--action pairs and derive policies by maximizing action values. Early RLRS works adopted Deep Q-Networks (DQN) to model recommendation as a sequential decision problem \cite{Mnih2015DQN}. While effective for small action spaces, vanilla DQN struggles with large-scale recommendation scenarios due to the combinatorial explosion of candidate items.
+
+To address this issue, subsequent studies introduced structured action decompositions and approximation techniques, such as slate-based value decomposition, enabling value-based learning in list-wise recommendation settings \cite{Ie2019SlateQ}.
+
+\subsubsection{Policy-based and Actor--Critic Methods}
+
+Policy-based methods directly optimize parameterized policies and are better suited for large or continuous action spaces. Actor--critic architectures, which combine policy learning with value estimation, have been widely adopted in industrial recommendation systems due to their stability and scalability \cite{Lillicrap2016DDPG, Zhao2018SlateMDP}.
+
+These methods allow flexible policy parameterization and naturally support stochastic policies, making them particularly suitable for long-term recommendation optimization.
+
+\subsection{State Representation Strategies}
+
+State representation plays a central role in RLRS, as it determines how user preferences and interaction histories are encoded.
+
+Early approaches relied on raw or handcrafted features, such as recent clicks or item statistics. More advanced methods model user behavior sequences using recurrent neural networks or attention mechanisms, producing dense low-dimensional embeddings that summarize long-term interests \cite{Zheng2018DRN}.
+
+Recent work increasingly adopts representation learning techniques that jointly optimize state embeddings and recommendation policies, enabling end-to-end training and improved generalization across users and contexts.
+
+\subsection{Exploration Strategies}
+
+Efficient exploration is critical in recommendation systems, where user feedback is sparse and interactions are costly.
+
+Traditional exploration mechanisms, such as $\epsilon$-greedy or entropy regularization, provide limited long-term coverage of the recommendation space. To overcome these limitations, recent studies advocate \emph{deep exploration}, which explicitly considers the long-term impact of exploratory actions on future user states \cite{Ie2019DeepExploration}.
+
+By leveraging high-fidelity simulators and long-horizon evaluation, deep exploration methods have demonstrated substantial improvements in long-term value metrics, highlighting the importance of exploration-aware system design.
+
+\subsection{Summary}
+
+In summary, reinforcement learning-based recommendation systems can be systematically understood through the lenses of learning paradigms, state representation, and exploration strategies. While early research focused on adapting standard RL algorithms to recommendation tasks, recent advances increasingly emphasize system-level integration and long-term value optimization. This taxonomy provides a structured foundation for analyzing representative methods and emerging trends, which we discuss in the following sections.

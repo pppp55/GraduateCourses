@@ -1,0 +1,25 @@
+\section{Representative Methods and Case Studies}
+
+In this section we discuss several representative works that capture the major technical directions and practical lessons in reinforcement learning based recommendation systems. We focus on three complementary perspectives: (1) broad surveys and frameworks that synthesize the field, (2) methodological advances addressing sparse/delayed feedback via deep exploration, and (3) recent, large-scale simulator-based RL systems for web-scale recommendations.
+
+\subsection{Cornerstone Survey: Afsar et al. (2021)}
+
+Afsar et al. (2021) provide a comprehensive survey of reinforcement learning based recommender systems (RLRS), organizing the field into four components: state representation, policy optimization, reward formulation, and environment construction. The paper synthesizes early DRL adaptations for recommendation, catalogs evaluation methodologies, and highlights practical challenges such as large action spaces and offline evaluation bias. As a field-level reference it is especially useful for researchers who want a systematic entry point into RLRS. \cite{Afsar2021Survey} :contentReference[oaicite:1]{index=1}
+
+\subsection{Deep Exploration for Sparse and Delayed Feedback}
+
+One fundamental challenge for RL in recommendation is sparse and delayed rewards: typical short interactions produce sparse signals that make naive exploration ineffective. Zhu \& Van Roy (2021) develop the notion of \emph{deep exploration} tailored to recommendation settings, proposing algorithms and uncertainty-aware architectures that prioritize exploration actions with long-term informational value. They demonstrate through high-fidelity simulators that deep exploration strategies can substantially outperform single-step exploration baselines on long-horizon metrics. This work is influential in reframing exploration from a myopic (single-step) notion to a planning-oriented, long-horizon objective. \cite{Zhu2021DeepExploration} :contentReference[oaicite:2]{index=2}
+
+\subsection{RecoMind: Simulator-based, Web-scale RL for Session Satisfaction}
+
+RecoMind (Ayed et al., 2025) presents a practical, simulator-based RL framework designed for web-scale session optimization. RecoMind integrates existing supervised recommenders to bootstrap a simulation environment, applies custom exploration strategies suited for extremely large item catalogs, and demonstrates both offline simulation gains and positive online A/B test results (notably improvements in consumption and session depth). The system highlights engineering patterns for deploying RL at scale: simulator bootstrapping, policy warm-starting, and tailored exploration for massive action spaces. RecoMind is an important example of how research ideas (deep exploration, simulator-based evaluation) can be integrated into production-like pipelines. \cite{Ayed2025RecoMind} :contentReference[oaicite:3]{index=3}
+
+\subsection{Cross-cutting Observations}
+
+\begin{itemize}
+    \item \textbf{Survey $\rightarrow$ Practice:} The field has matured from algorithmic adaptations (DQN, actor--critic) to frameworks and system designs that address evaluation, simulators, and deployment—exactly the components emphasized in Afsar et al. \cite{Afsar2021Survey}. :contentReference[oaicite:4]{index=4}
+    \item \textbf{Exploration matters:} Advances in exploration (e.g., epistemic uncertainty, deep exploration) are not merely theoretical: they drive practical gains when paired with good simulators and long-horizon evaluation, as shown by both Zhu \& Van Roy and recent system papers. \cite{Zhu2021DeepExploration,Ayed2025RecoMind} :contentReference[oaicite:5]{index=5}
+    \item \textbf{Engineering patterns:} Successful web-scale RL deployments often combine (i) simulator-based offline training, (ii) warm-starting from supervised models, and (iii) exploration strategies tuned to large catalogs—patterns clearly demonstrated in RecoMind. \cite{Ayed2025RecoMind} :contentReference[oaicite:6]{index=6}
+\end{itemize}
+
+These representative works together illustrate the trajectory of RL-based recommendation: from conceptual surveys to methodological advances (especially in exploration) and finally to system-level integration needed for real-world, web-scale adoption.

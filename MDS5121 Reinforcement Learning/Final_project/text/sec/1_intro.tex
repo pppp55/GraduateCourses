@@ -1,0 +1,20 @@
+\section{Introduction}
+
+Reinforcement learning has become an increasingly important approach for recommendation systems, as real-world recommendation tasks are inherently sequential and involve long-term interactions between users and platforms. Early recommendation systems were primarily formulated as static prediction problems, where models estimate the relevance of an item to a user based on historical interactions. While supervised learning approaches have achieved notable success in optimizing short-term engagement metrics, they are fundamentally limited in modeling delayed feedback and long-term user satisfaction.
+
+In real-world scenarios, recommendation is inherently a sequential decision-making process. Each recommendation influences future user behavior, preference evolution, and engagement patterns. Optimizing only short-term metrics may lead to suboptimal outcomes such as user fatigue, reduced diversity, or long-term churn. This gap between short-term optimization and long-term value has motivated increasing attention toward reinforcement learning (RL), which naturally models interaction as a Markov Decision Process (MDP) and optimizes cumulative rewards over extended horizons \cite{Sutton1998RL}.
+
+The application of reinforcement learning to recommendation systems has attracted growing interest over the past decade. Early studies explored value-based and policy-based methods to address large action spaces and delayed rewards, including Deep Q-Networks (DQN) and actor–critic frameworks \cite{Zheng2018DRN,Chen2019TopK}. Subsequent research focused on improving state representation, exploration efficiency, and scalability, enabling RL-based methods to better align with industrial-scale recommendation settings \cite{Zhao2018SlateMDP}. More recently, the community has shifted toward deeper forms of exploration and long-term value optimization, supported by high-fidelity simulators and system-level designs \cite{Ie2019DeepExploration}.
+
+In parallel, the rapid advancement of large language models (LLMs) has introduced new possibilities for recommendation systems. By incorporating reasoning, planning, and tool usage capabilities, LLM-powered agents have begun to complement reinforcement learning in sequential recommendation tasks, leading to hybrid architectures that extend beyond traditional model-centric designs \cite{Wang2024RecoMind}. These developments signal a paradigm shift from isolated algorithmic improvements toward holistic, agent-based recommendation systems.
+
+This survey aims to provide a comprehensive and structured overview of reinforcement learning-based recommendation systems. Specifically, we make the following contributions:
+\begin{itemize}
+    \item We formalize recommendation systems from a reinforcement learning perspective and summarize common problem formulations.
+    \item We propose a taxonomy that categorizes RL-based recommendation methods according to learning paradigms, state representation strategies, and exploration mechanisms.
+    \item We review representative works to highlight key technical innovations and practical lessons.
+    \item We analyze emerging trends, including deep exploration and the integration of RL with large language models, and discuss open challenges and future directions.
+\end{itemize}
+
+By synthesizing existing research through a unified lens, this survey seeks to facilitate a deeper understanding of how reinforcement learning can address the core challenges of modern recommendation systems.
+\label{sec:intro}

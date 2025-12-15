@@ -1,0 +1,60 @@
+\section{Background and Problem Formulation}
+
+In this section, we introduce the fundamental background of reinforcement learning and formalize recommendation systems from a sequential decision-making perspective. We also discuss commonly used evaluation protocols and simulation environments that support offline training and analysis of reinforcement learning-based recommendation systems.
+
+\subsection{Reinforcement Learning Preliminaries}
+
+Reinforcement learning (RL) studies how an agent interacts with an environment to maximize cumulative rewards through sequential decision making \cite{Sutton1998RL}. A standard RL problem is commonly formulated as a Markov Decision Process (MDP), defined by a tuple $(\mathcal{S}, \mathcal{A}, \mathcal{P}, \mathcal{R}, \gamma)$, where $\mathcal{S}$ denotes the state space, $\mathcal{A}$ the action space, $\mathcal{P}(s'|s,a)$ the state transition probability, $\mathcal{R}(s,a)$ the reward function, and $\gamma \in (0,1]$ the discount factor.
+
+At each time step $t$, the agent observes a state $s_t \in \mathcal{S}$, selects an action $a_t \in \mathcal{A}$ according to a policy $\pi(a|s)$, receives a scalar reward $r_t$, and transitions to the next state $s_{t+1}$. The objective of reinforcement learning is to learn an optimal policy that maximizes the expected discounted return:
+\begin{equation}
+\mathbb{E}_{\pi} \left[ \sum_{t=0}^{\infty} \gamma^t r_t \right].
+\end{equation}
+
+Modern RL algorithms can be broadly categorized into value-based methods, policy-based methods, and actor--critic methods \cite{Mnih2015DQN, Lillicrap2016DDPG}. These approaches form the algorithmic foundation of reinforcement learning-based recommendation systems.
+
+\subsection{MDP Formulation of Recommendation Systems}
+
+Recommendation systems can be naturally modeled as sequential decision problems, where the system repeatedly interacts with users and influences their future behaviors \cite{Shani2005MDP}. In an RL-based recommender system, each user interaction corresponds to a step in the MDP.
+
+\subsubsection{State Space}
+
+The state $s_t$ is designed to capture the current context of the user and the system. Typical state representations include:
+\begin{itemize}
+    \item User profiles and static attributes;
+    \item Historical interaction sequences (clicked, viewed, or purchased items);
+    \item Contextual information such as time, device, or location.
+\end{itemize}
+
+Early approaches relied on raw or handcrafted features, while more recent methods adopt dense vector representations learned via deep neural networks \cite{Zhao2018SlateMDP}.
+
+\subsubsection{Action Space}
+
+The action space corresponds to the recommendation decisions made by the system. Depending on the task, an action may represent:
+\begin{itemize}
+    \item Recommending a single item;
+    \item Recommending a ranked list (slate) of items;
+    \item Selecting a composite action such as item-category or item-layout pairs.
+\end{itemize}
+
+Slate recommendation significantly enlarges the action space and introduces combinatorial complexity, posing major challenges for conventional RL algorithms \cite{Ie2019SlateQ}.
+
+\subsubsection{Reward Design}
+
+The reward function encodes the optimization objective of the recommendation system. Commonly used reward signals include clicks, dwell time, purchases, and ratings. However, these signals are often sparse, delayed, and noisy. Moreover, optimizing immediate rewards does not necessarily align with long-term user satisfaction or platform objectives \cite{Ie2019DeepExploration}.
+
+Designing reward functions that effectively reflect long-term value remains one of the central challenges in reinforcement learning-based recommendation systems.
+
+\subsection{Evaluation Protocols and Simulation Environments}
+
+Evaluating RL-based recommendation systems is non-trivial due to the interactive nature of the problem. Online A/B testing provides the most reliable evaluation but is expensive and risky. As a result, offline evaluation and simulation-based methods are widely adopted.
+
+\subsubsection{Offline Evaluation}
+
+Offline evaluation typically relies on logged historical data and off-policy evaluation techniques. Methods such as inverse propensity scoring and doubly robust estimators have been explored to correct for distribution shift between the behavior policy and the learned policy \cite{Chen2019TopK}. However, offline evaluation remains fundamentally limited by the quality and coverage of logged data.
+
+\subsubsection{Simulation-Based Evaluation}
+
+Simulation environments provide a controllable and scalable alternative for evaluating RL-based recommendation algorithms. User behavior simulators attempt to model user responses to recommendation sequences, enabling long-horizon evaluation and deep exploration \cite{Ie2019DeepExploration}. High-fidelity simulators have been shown to play a critical role in advancing long-term value optimization in industrial recommendation systems.
+
+Overall, background modeling choices, problem formulation, and evaluation protocols jointly determine the effectiveness and applicability of reinforcement learning methods in recommendation systems.
