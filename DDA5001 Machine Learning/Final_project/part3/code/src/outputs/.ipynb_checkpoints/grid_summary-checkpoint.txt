@@ -1,0 +1,19 @@
+Starting grid run...
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=math | temperature=0.6 ====
+-- Evaluation output: outputs/math_Qwen2.5-Math-1.5B_t0.6_eval.jsonl
+Counting lines in outputs/math_Qwen2.5-Math-1.5B_t0.6.jsonl...
+Scoring generations from outputs/math_Qwen2.5-Math-1.5B_t0.6.jsonl...
+Processing complete. Scored 8000 lines across 500 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 35.91%
+  pass@2   : 51.35%
+  pass@4   : 65.83%
+  pass@8   : 76.86%
+  pass@16  : 84.60%
+
+Majority Vote Metric:
+  maj@1    : 44.40%
+
+Scored results saved to outputs/math_Qwen2.5-Math-1.5B_t0.6_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=amc | temperature=0.6 ====

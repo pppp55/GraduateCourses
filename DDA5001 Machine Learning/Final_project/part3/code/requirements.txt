@@ -1,0 +1,5 @@
+torch==2.6.0
+vllm==0.8.5
+transformers==4.53.3
+pylatexenc
+math-verify[antlr4_9_3]

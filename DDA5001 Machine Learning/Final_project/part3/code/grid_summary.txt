@@ -1,0 +1,331 @@
+Starting grid run...
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=math | temperature=0.6 ====
+-- Evaluation output: outputs/math_Qwen2.5-Math-1.5B_t0.6_eval.jsonl
+Counting lines in outputs/math_Qwen2.5-Math-1.5B_t0.6.jsonl...
+Scoring generations from outputs/math_Qwen2.5-Math-1.5B_t0.6.jsonl...
+Processing complete. Scored 8000 lines across 500 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 35.91%
+  pass@2   : 51.35%
+  pass@4   : 65.83%
+  pass@8   : 76.86%
+  pass@16  : 84.60%
+
+Majority Vote Metric:
+  maj@1    : 44.40%
+
+Scored results saved to outputs/math_Qwen2.5-Math-1.5B_t0.6_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=amc | temperature=0.6 ====
+-- Evaluation output: outputs/amc_Qwen2.5-Math-1.5B_t0.6_eval.jsonl
+Counting lines in outputs/amc_Qwen2.5-Math-1.5B_t0.6.jsonl...
+Scoring generations from outputs/amc_Qwen2.5-Math-1.5B_t0.6.jsonl...
+Processing complete. Scored 2560 lines across 40 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 34.77%
+  pass@2   : 48.36%
+  pass@4   : 60.74%
+  pass@8   : 70.93%
+  pass@16  : 79.26%
+  pass@32  : 85.75%
+  pass@64  : 90.00%
+
+Majority Vote Metric:
+  maj@1    : 47.50%
+
+Scored results saved to outputs/amc_Qwen2.5-Math-1.5B_t0.6_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=aime | temperature=0.6 ====
+-- Evaluation output: outputs/aime_Qwen2.5-Math-1.5B_t0.6_eval.jsonl
+Counting lines in outputs/aime_Qwen2.5-Math-1.5B_t0.6.jsonl...
+Scoring generations from outputs/aime_Qwen2.5-Math-1.5B_t0.6.jsonl...
+Processing complete. Scored 1920 lines across 30 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 4.11%
+  pass@2   : 7.16%
+  pass@4   : 11.34%
+  pass@8   : 16.19%
+  pass@16  : 21.29%
+  pass@32  : 27.42%
+  pass@64  : 36.67%
+
+Majority Vote Metric:
+  maj@1    : 6.67%
+
+Scored results saved to outputs/aime_Qwen2.5-Math-1.5B_t0.6_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=math | temperature=1.0 ====
+-- Evaluation output: outputs/math_Qwen2.5-Math-1.5B_t1.0_eval.jsonl
+Counting lines in outputs/math_Qwen2.5-Math-1.5B_t1.0.jsonl...
+Scoring generations from outputs/math_Qwen2.5-Math-1.5B_t1.0.jsonl...
+Processing complete. Scored 8000 lines across 500 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 29.12%
+  pass@2   : 45.17%
+  pass@4   : 62.16%
+  pass@8   : 76.25%
+  pass@16  : 85.60%
+
+Majority Vote Metric:
+  maj@1    : 43.00%
+
+Scored results saved to outputs/math_Qwen2.5-Math-1.5B_t1.0_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=amc | temperature=1.0 ====
+-- Evaluation output: outputs/amc_Qwen2.5-Math-1.5B_t1.0_eval.jsonl
+Counting lines in outputs/amc_Qwen2.5-Math-1.5B_t1.0.jsonl...
+Scoring generations from outputs/amc_Qwen2.5-Math-1.5B_t1.0.jsonl...
+Processing complete. Scored 2560 lines across 40 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 24.57%
+  pass@2   : 38.54%
+  pass@4   : 53.71%
+  pass@8   : 67.60%
+  pass@16  : 79.00%
+  pass@32  : 86.51%
+  pass@64  : 90.00%
+
+Majority Vote Metric:
+  maj@1    : 42.50%
+
+Scored results saved to outputs/amc_Qwen2.5-Math-1.5B_t1.0_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=aime | temperature=1.0 ====
+-- Evaluation output: outputs/aime_Qwen2.5-Math-1.5B_t1.0_eval.jsonl
+Counting lines in outputs/aime_Qwen2.5-Math-1.5B_t1.0.jsonl...
+Scoring generations from outputs/aime_Qwen2.5-Math-1.5B_t1.0.jsonl...
+Processing complete. Scored 1920 lines across 30 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 2.71%
+  pass@2   : 5.00%
+  pass@4   : 8.63%
+  pass@8   : 13.53%
+  pass@16  : 19.34%
+  pass@32  : 26.60%
+  pass@64  : 36.67%
+
+Majority Vote Metric:
+  maj@1    : 3.33%
+
+Scored results saved to outputs/aime_Qwen2.5-Math-1.5B_t1.0_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=math | temperature=1.2 ====
+-- Evaluation output: outputs/math_Qwen2.5-Math-1.5B_t1.2_eval.jsonl
+Counting lines in outputs/math_Qwen2.5-Math-1.5B_t1.2.jsonl...
+Scoring generations from outputs/math_Qwen2.5-Math-1.5B_t1.2.jsonl...
+Processing complete. Scored 8000 lines across 500 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 17.84%
+  pass@2   : 30.60%
+  pass@4   : 47.47%
+  pass@8   : 65.24%
+  pass@16  : 79.20%
+
+Majority Vote Metric:
+  maj@1    : 16.20%
+
+Scored results saved to outputs/math_Qwen2.5-Math-1.5B_t1.2_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=amc | temperature=1.2 ====
+-- Evaluation output: outputs/amc_Qwen2.5-Math-1.5B_t1.2_eval.jsonl
+Counting lines in outputs/amc_Qwen2.5-Math-1.5B_t1.2.jsonl...
+Scoring generations from outputs/amc_Qwen2.5-Math-1.5B_t1.2.jsonl...
+Processing complete. Scored 2560 lines across 40 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 14.41%
+  pass@2   : 25.11%
+  pass@4   : 39.85%
+  pass@8   : 56.29%
+  pass@16  : 71.12%
+  pass@32  : 82.67%
+  pass@64  : 90.00%
+
+Majority Vote Metric:
+  maj@1    : 7.50%
+
+Scored results saved to outputs/amc_Qwen2.5-Math-1.5B_t1.2_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B | dataset=aime | temperature=1.2 ====
+-- Evaluation output: outputs/aime_Qwen2.5-Math-1.5B_t1.2_eval.jsonl
+Counting lines in outputs/aime_Qwen2.5-Math-1.5B_t1.2.jsonl...
+Scoring generations from outputs/aime_Qwen2.5-Math-1.5B_t1.2.jsonl...
+Processing complete. Scored 1920 lines across 30 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 1.77%
+  pass@2   : 3.39%
+  pass@4   : 6.25%
+  pass@8   : 10.78%
+  pass@16  : 16.83%
+  pass@32  : 23.47%
+  pass@64  : 30.00%
+
+Majority Vote Metric:
+  maj@1    : 0.00%
+
+Scored results saved to outputs/aime_Qwen2.5-Math-1.5B_t1.2_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B-Instruct | dataset=math | temperature=0.6 ====
+-- Evaluation output: outputs/math_Qwen2.5-Math-1.5B-Instruct_t0.6_eval.jsonl
+Counting lines in outputs/math_Qwen2.5-Math-1.5B-Instruct_t0.6.jsonl...
+Scoring generations from outputs/math_Qwen2.5-Math-1.5B-Instruct_t0.6.jsonl...
+Processing complete. Scored 8000 lines across 500 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 75.11%
+  pass@2   : 80.86%
+  pass@4   : 85.54%
+  pass@8   : 89.01%
+  pass@16  : 91.00%
+
+Majority Vote Metric:
+  maj@1    : 79.20%
+
+Scored results saved to outputs/math_Qwen2.5-Math-1.5B-Instruct_t0.6_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B-Instruct | dataset=amc | temperature=0.6 ====
+-- Evaluation output: outputs/amc_Qwen2.5-Math-1.5B-Instruct_t0.6_eval.jsonl
+Counting lines in outputs/amc_Qwen2.5-Math-1.5B-Instruct_t0.6.jsonl...
+Scoring generations from outputs/amc_Qwen2.5-Math-1.5B-Instruct_t0.6.jsonl...
+Processing complete. Scored 2560 lines across 40 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 53.52%
+  pass@2   : 63.85%
+  pass@4   : 72.47%
+  pass@8   : 79.22%
+  pass@16  : 84.85%
+  pass@32  : 89.87%
+  pass@64  : 95.00%
+
+Majority Vote Metric:
+  maj@1    : 60.00%
+
+Scored results saved to outputs/amc_Qwen2.5-Math-1.5B-Instruct_t0.6_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B-Instruct | dataset=aime | temperature=0.6 ====
+-- Evaluation output: outputs/aime_Qwen2.5-Math-1.5B-Instruct_t0.6_eval.jsonl
+Counting lines in outputs/aime_Qwen2.5-Math-1.5B-Instruct_t0.6.jsonl...
+Scoring generations from outputs/aime_Qwen2.5-Math-1.5B-Instruct_t0.6.jsonl...
+Processing complete. Scored 1920 lines across 30 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 8.39%
+  pass@2   : 13.76%
+  pass@4   : 20.12%
+  pass@8   : 26.70%
+  pass@16  : 33.80%
+  pass@32  : 41.52%
+  pass@64  : 50.00%
+
+Majority Vote Metric:
+  maj@1    : 13.33%
+
+Scored results saved to outputs/aime_Qwen2.5-Math-1.5B-Instruct_t0.6_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B-Instruct | dataset=math | temperature=1.0 ====
+-- Evaluation output: outputs/math_Qwen2.5-Math-1.5B-Instruct_t1.0_eval.jsonl
+Counting lines in outputs/math_Qwen2.5-Math-1.5B-Instruct_t1.0.jsonl...
+Scoring generations from outputs/math_Qwen2.5-Math-1.5B-Instruct_t1.0.jsonl...
+Processing complete. Scored 8000 lines across 500 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 74.60%
+  pass@2   : 80.88%
+  pass@4   : 85.39%
+  pass@8   : 88.86%
+  pass@16  : 91.60%
+
+Majority Vote Metric:
+  maj@1    : 79.80%
+
+Scored results saved to outputs/math_Qwen2.5-Math-1.5B-Instruct_t1.0_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B-Instruct | dataset=amc | temperature=1.0 ====
+-- Evaluation output: outputs/amc_Qwen2.5-Math-1.5B-Instruct_t1.0_eval.jsonl
+Counting lines in outputs/amc_Qwen2.5-Math-1.5B-Instruct_t1.0.jsonl...
+Scoring generations from outputs/amc_Qwen2.5-Math-1.5B-Instruct_t1.0.jsonl...
+Processing complete. Scored 2560 lines across 40 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 52.07%
+  pass@2   : 63.05%
+  pass@4   : 71.35%
+  pass@8   : 77.67%
+  pass@16  : 83.69%
+  pass@32  : 89.55%
+  pass@64  : 95.00%
+
+Majority Vote Metric:
+  maj@1    : 65.00%
+
+Scored results saved to outputs/amc_Qwen2.5-Math-1.5B-Instruct_t1.0_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B-Instruct | dataset=aime | temperature=1.0 ====
+-- Evaluation output: outputs/aime_Qwen2.5-Math-1.5B-Instruct_t1.0_eval.jsonl
+Counting lines in outputs/aime_Qwen2.5-Math-1.5B-Instruct_t1.0.jsonl...
+Scoring generations from outputs/aime_Qwen2.5-Math-1.5B-Instruct_t1.0.jsonl...
+Processing complete. Scored 1920 lines across 30 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 9.48%
+  pass@2   : 15.27%
+  pass@4   : 22.03%
+  pass@8   : 29.16%
+  pass@16  : 36.79%
+  pass@32  : 44.20%
+  pass@64  : 50.00%
+
+Majority Vote Metric:
+  maj@1    : 16.67%
+
+Scored results saved to outputs/aime_Qwen2.5-Math-1.5B-Instruct_t1.0_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B-Instruct | dataset=math | temperature=1.2 ====
+-- Evaluation output: outputs/math_Qwen2.5-Math-1.5B-Instruct_t1.2_eval.jsonl
+Counting lines in outputs/math_Qwen2.5-Math-1.5B-Instruct_t1.2.jsonl...
+Scoring generations from outputs/math_Qwen2.5-Math-1.5B-Instruct_t1.2.jsonl...
+Processing complete. Scored 8000 lines across 500 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 70.14%
+  pass@2   : 77.98%
+  pass@4   : 84.00%
+  pass@8   : 88.60%
+  pass@16  : 91.80%
+
+Majority Vote Metric:
+  maj@1    : 76.80%
+
+Scored results saved to outputs/math_Qwen2.5-Math-1.5B-Instruct_t1.2_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B-Instruct | dataset=amc | temperature=1.2 ====
+-- Evaluation output: outputs/amc_Qwen2.5-Math-1.5B-Instruct_t1.2_eval.jsonl
+Counting lines in outputs/amc_Qwen2.5-Math-1.5B-Instruct_t1.2.jsonl...
+Scoring generations from outputs/amc_Qwen2.5-Math-1.5B-Instruct_t1.2.jsonl...
+Processing complete. Scored 2560 lines across 40 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 48.28%
+  pass@2   : 59.44%
+  pass@4   : 69.03%
+  pass@8   : 76.70%
+  pass@16  : 82.32%
+  pass@32  : 86.03%
+  pass@64  : 90.00%
+
+Majority Vote Metric:
+  maj@1    : 62.50%
+
+Scored results saved to outputs/amc_Qwen2.5-Math-1.5B-Instruct_t1.2_eval.jsonl
+\n==== Running Qwen/Qwen2.5-Math-1.5B-Instruct | dataset=aime | temperature=1.2 ====
+-- Evaluation output: outputs/aime_Qwen2.5-Math-1.5B-Instruct_t1.2_eval.jsonl
+Counting lines in outputs/aime_Qwen2.5-Math-1.5B-Instruct_t1.2.jsonl...
+Scoring generations from outputs/aime_Qwen2.5-Math-1.5B-Instruct_t1.2.jsonl...
+Processing complete. Scored 1920 lines across 30 unique problems.
+
+Pass@k Metrics:
+  pass@1   : 7.29%
+  pass@2   : 12.13%
+  pass@4   : 18.02%
+  pass@8   : 23.99%
+  pass@16  : 29.96%
+  pass@32  : 36.42%
+  pass@64  : 43.33%
+
+Majority Vote Metric:
+  maj@1    : 16.67%
+
+Scored results saved to outputs/aime_Qwen2.5-Math-1.5B-Instruct_t1.2_eval.jsonl
