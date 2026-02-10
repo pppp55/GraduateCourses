@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{sam2}
+Meta AI.
+\newblock Sam 2: Segment anything in images and videos.
+\newblock \url{https://github.com/facebookresearch/sam2}, 2024.
+
+\bibitem{chen2017deeplab}
+Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, and Alan~L. Yuille.
+\newblock Rethinking atrous convolution for semantic image segmentation.
+\newblock In {\em arXiv preprint arXiv:1706.05587}, 2017.
+
+\bibitem{ronneberger2015unet}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In {\em International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)}, 2015.
+
+\end{thebibliography}

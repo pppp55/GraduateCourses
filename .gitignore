@@ -1,0 +1,7 @@
+EG1800
+checkpoints/
+sam2/
+
+*.zip
+*.tar.gz
+*.pt
