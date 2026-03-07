@@ -3,5 +3,6 @@ checkpoints/
 sam2/
 
 *.zip
+*.tar
 *.tar.gz
 *.pt
