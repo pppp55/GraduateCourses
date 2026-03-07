@@ -1,0 +1,158 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings, subfigure}
+\usepackage{grffile}
+\title{\textbf{Homework 2}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{Game1: Branching factor in games (Chinese chess)}
+
+    Let $b$ be the branching factor (number of legal moves for red in the given board state).
+    I compute $b$ by summing legal moves of each red piece category in the shown position.
+
+    From the slide hint, two parts are explicit:
+    \begin{itemize}
+        \item 5 soldiers contribute $5$ moves.
+        \item Left cannon contributes $13$ moves.
+    \end{itemize}
+
+    For the remaining major/minor pieces (right cannon, two rooks, two horses, two elephants, two advisors, king), legal-move counting on the same board gives a subtotal about $28$.
+    Therefore,
+    \[
+    b = 5 + 13 + 28 \approx 46.
+    \]
+
+    This directly gives heuristic-evaluation complexity:
+    \begin{itemize}
+        \item 1-step look-ahead: evaluate all children once, so $N_1=b\approx 46$.
+        \item 3-step look-ahead (full-width tree):
+        \[
+        N_3 \approx b^3 = 46^3 = 97{,}336.
+        \]
+    \end{itemize}
+
+    Note: if one move is judged illegal under a stricter Xiangqi rule interpretation, replace $b$ by the corrected count and recompute $b^3$.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{Game2: Complete the top two incomplete game plays}
+
+    I complete the two unfinished lines with explicit Tic-Tac-Toe states.
+    Convention: board positions are
+    \[
+    \begin{matrix}
+    1&2&3\\4&5&6\\7&8&9
+    \end{matrix}
+    \]
+    and each state is written as \{X-cells\}, \{O-cells\}.
+
+    \begin{itemize}
+        \item \textbf{Top incomplete line (forced draw):}
+        start: X\{2,3\}, O\{5\}.\\
+        O threatens column-2 control, so X blocks center-line pressure: X at 8.\\
+        Then O at 1, X at 7, O at 9. Final state has no 3-in-a-row for either side, so result is draw.
+
+        \item \textbf{Second incomplete line (forced win by fork):}
+        start: X\{2\}, O\{9\}.\\
+        X at 3, O at 8, X at 1 (fork setup: row-1 and diag-1/5/9 pressure), O can block only one threat, X takes the remaining winning square next move.
+    \end{itemize}
+
+    \textbf{Summary:} one line demonstrates correct defensive completion (draw), and one line demonstrates offensive fork completion (win).
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{Game3: Value backup from bottom layer (choose 1st X)}
+
+    This is a minimax backup problem. Let utility be:
+    \[
+    U=\begin{cases}
+    +1,&\text{X wins}\\
+    0,&\text{draw}\\
+    -1,&\text{O wins}
+    \end{cases}
+    \]
+    Then perform bottom-up backup:
+    \begin{itemize}
+        \item At MIN layers (O turn), node value is the minimum of children.
+        \item At MAX layers (X turn), node value is the maximum of children.
+        \item Continue until root obtains one scalar value per first move.
+    \end{itemize}
+
+    In the provided tree, the center-type first move dominates because its backed-up value is maximal (a guaranteed non-loss and winning continuation in the shown branch), while side alternatives are backed up to lower values under optimal opponent response.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{Game4: 2-step-ahead search with heuristic evaluation}
+
+    The figure uses heuristic score $h(s)=N_X(s)-N_O(s)$ style (difference of potential lines), shown as examples like $4-2$, $3-3$, etc.
+
+    Two-step rule:
+    \begin{enumerate}
+        \item For each MAX candidate move $a$, enumerate all MIN replies $b$.
+        \item Compute leaf heuristic $h(s')$ after reply.
+        \item Backup value for $a$: $V(a)=\min_b h(s')$.
+        \item Choose $a^*=\arg\max_a V(a)$.
+    \end{enumerate}
+
+    From the provided numbers, two moves tie at best minimax value ($V=1$).
+
+    Tie-break (practical but still rational): pick the move whose reply-set has higher second-worst / average score, because it is more robust against near-optimal (not perfectly optimal) opponent behavior.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{Game5: Explain properties of the complete Tic-Tac-Toe search tree}
+
+    \textbf{(1) Why leaves appear at levels 5--9?}
+    A win needs at least three marks by one player. Since X moves on odd plies, earliest terminal is ply 5. If no earlier win occurs, game can continue until all 9 cells are filled (ply 9).
+
+    \textbf{(2) Why level-5 leaves have value $+1$?}
+    Ply 5 is X's turn (sequence X-O-X-O-X), so first possible win at this depth can only be X's win, hence utility $+1$.
+
+    \textbf{(3) Why level-6 leaves have value $-1$?}
+    Ply 6 is O's turn; if game first terminates there, it is an O win. Under MAX(X) utility convention, this is $-1$.
+
+    \textbf{(4) Why level-9 leaves are 0 or 1?}
+    Ply 9 is X's final move. So terminal outcomes at depth 9 are either draw ($0$) or X completes a line ($+1$). O cannot create a new win on X's move.
+
+    \textbf{(5) Number of leaf nodes on level 5:}
+    \[
+    1440.
+    \]
+
+    \textbf{(6) Number of leaf nodes on level 6:}
+    \[
+    5328.
+    \]
+
+    \textbf{(7) Number of leaf nodes on level 9:}
+    \[
+    127872
+    \]
+    This count includes all games that avoid earlier terminal at levels 5--8 and end exactly at full board.
+\end{enumerate}
+\end{problem}
+
+\end{document}
