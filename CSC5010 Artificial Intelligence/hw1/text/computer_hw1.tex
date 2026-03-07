@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings, subfigure}
+\usepackage{grffile}
+\title{\textbf{Homework 1}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{A1: DFS on fixed puzzle}
+    \begin{itemize}
+        \item Start state: 283164705
+        \item Goal state: 123804765
+        \item Number of moves: 5
+        \item Path found:\\
+        283164705 $\rightarrow$ 283104765 $\rightarrow$ 203184765 $\rightarrow$ 023184765 $\rightarrow$ 123084765 $\rightarrow$ 123804765
+    \end{itemize}
+
+    \item \textbf{B1: A* on fixed puzzle}
+    \begin{itemize}
+        \item Start state: 283164705
+        \item Goal state: 123804765
+        \item Number of moves: 5
+        \item Path found (same as A1 in this case):\\
+        283164705 $\rightarrow$ 283104765 $\rightarrow$ 203184765 $\rightarrow$ 023184765 $\rightarrow$ 123084765 $\rightarrow$ 123804765
+    \end{itemize}
+
+    \item \textbf{C1: Parity test}
+    \begin{itemize}
+        \item Original start parity: 1
+        \item After swapping first two numbers (2 and 8): parity becomes 0
+        \item Goal parity: 1
+        \item Conclusion: swapped start state and goal state have different parity, so they are unreachable.
+    \end{itemize}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{A2/B2 random states (seed = 225040065)}
+    \begin{itemize}
+        \item Random start state: 718532046
+        \item Random goal state: 584732106
+        \item The two random states are not reachable directly (parity mismatch), so I swapped a neighboring pair in the start state.
+        \item Adjusted start state: 178532046
+    \end{itemize}
+
+    \item \textbf{A2: DFS on random puzzle (after adjustment)}
+    \begin{itemize}
+        \item Start state: 178532046
+        \item Goal state: 584732106
+        \item Number of moves: 57545
+        \item Simplified path (key states):\\
+        178532046 $\rightarrow$ 178032546 $\rightarrow$ 078132546 $\rightarrow$ $\cdots$ $\rightarrow$ 584032716 $\rightarrow$ 584732016 $\rightarrow$ 584732106
+    \end{itemize}
+
+    \item \textbf{B2: A* on random puzzle (after adjustment)}
+    \begin{itemize}
+        \item Start state: 178532046
+        \item Goal state: 584732106
+        \item Number of moves: 21
+        \item Simplified path (key states):\\
+        178532046 $\rightarrow$ 178532406 $\rightarrow$ 178502436 $\rightarrow$ $\cdots$ $\rightarrow$ 584730162 $\rightarrow$ 584732160 $\rightarrow$ 584732106
+    \end{itemize}
+\end{enumerate}
+\end{problem}
+
+\end{document}

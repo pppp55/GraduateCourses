@@ -1,0 +1,172 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings, subfigure}
+\usepackage{grffile}
+\title{\textbf{Homework 1}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{INTRO1: What does ``act rationally'' mean?}
+
+    In AI, ``act rationally'' means an agent chooses the action that maximizes the expected outcome (utility/performance) based on available information and constraints. It does \textbf{not} mean the agent is morally good or knows everything; it means decision-making is logically consistent with its objective.
+
+    \textbf{Examples:}
+    \begin{itemize}
+        \item A GPS navigation system selects the route with minimum expected travel time, even if it is not the shortest distance.
+        \item In online ad bidding, a bidder sets bids to maximize expected conversion value under a budget, instead of bidding blindly.
+    \end{itemize}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{INTRO2: One task humans do not do well}
+
+    Humans are generally weak at consistently comparing large amounts of high-dimensional visual data. For example, matching one face against millions of surveillance images is slow and error-prone for humans, while computer vision systems can do this at large scale with stable accuracy.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{BFS1 (8-puzzle search count)}
+
+    From the slide, the goal node is reached in the level-5 expansion stage, and the marked index indicates it is the 27-th searched state.
+    Therefore, the number of searched states is:
+    \[
+    N_{\text{searched}} = 27.
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{DFS1 (draw DFS tree and classify edges)}
+
+    Using the graph on page 4 and the visit order shown on the slide:
+    \[
+    u \rightarrow v \rightarrow t \rightarrow s \rightarrow r \rightarrow w.
+    \]
+    DFS tree edges are:
+    \[
+    (u,v), (v,t), (t,s), (t,r), (r,w).
+    \]
+    Non-tree edges are back edges to ancestors:
+    \[
+    (u,s), (v,w).
+    \]
+    This matches the slide note: backtrack from $s$, then $w$, then $r$, then $t$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{DFS2 (discovery/finish times)}
+
+    According to the DFS recursion sequence in the figure, the entry/exit times are:
+    \[
+    u:(1,12),\ v:(2,11),\ t:(3,10),\ s:(4,5),\ r:(6,9),\ w:(7,8).
+    \]
+    (Format: $d[v], f[v]$.)
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{DFS3 (alphabetical visiting order)}
+
+    For the directed graph on page 6 (with vertices and adjacency lists both processed alphabetically), one valid DFS visit order is:
+    \[
+    q, s, v, w, t, x, z, y, r, u.
+    \]
+    A corresponding backtracking (finish) order is:
+    \[
+    w, v, s, z, x, y, t, q, u, r.
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{Dijkstra1}
+
+    Source is $a$. Final shortest distances are:
+    \[
+    \begin{aligned}
+    &d(a)=0,\ d(b)=4,\ d(h)=8,\ d(g)=9,\ d(f)=11,\\
+    &d(c)=12,\ d(i)=14,\ d(d)=19,\ d(e)=21.
+    \end{aligned}
+    \]
+    One shortest-path tree predecessor set is:
+    \[
+    \begin{aligned}
+    &\pi(b)=a,\ \pi(h)=a,\ \pi(g)=h,\ \pi(f)=g,\\
+    &\pi(c)=b,\ \pi(i)=c,\ \pi(d)=c,\ \pi(e)=f.
+    \end{aligned}
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{A*1}
+
+    Start node: $A$, goal node: $T$.
+
+    Main expansions (with $h(B)=16$):
+    \begin{itemize}
+        \item Expand $A$: $g(A)=0, f(A)=30$; generate $X$ with $g=17, f=44$.
+        \item Expand $X$: generate $B$ ($g=33, f=49$), $C$ ($g=28, f=45$).
+        \item Expand $C$: generate $W$ ($g=39, f=48$), $L$ ($g=48, f=81$).
+        \item Expand $W$: generate $T$ ($g=48, f=48$), $K$ ($g=49, f=68$).
+        \item Expand $T$ (goal), stop.
+    \end{itemize}
+    Final path:
+    \[
+    A \rightarrow X \rightarrow C \rightarrow W \rightarrow T,
+    \]
+    with total cost $48$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{A*2 (change $h(B)$ from 16 to 6)}
+
+    With $h(B)=6$, node $B$ is expanded earlier, so the expansion order changes.
+    However, the final optimal path is still:
+    \[
+    A \rightarrow X \rightarrow C \rightarrow W \rightarrow T,
+    \]
+    with the same optimal cost $48$.
+
+    Conclusion: both settings are admissible, so optimality is preserved; the difference is mainly search efficiency/order (smaller $h(B)$ is less informative and may cause extra exploration).
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{A*3 (optional, textbook p.114 Problem 3.7)}
+
+    \begin{itemize}
+        \item (a) For polygonal shortest path planning, a standard finite state set is the visibility-graph nodes: all obstacle vertices plus $S$ and $G$.
+        If obstacle vertices total is $V$, then number of states is $V+2$.
+        \item (b) A shortest collision-free path is piecewise linear and only changes direction at obstacle vertices; otherwise a bend in free space can be shortened by a straight segment (triangle inequality). Therefore shortest paths go along visibility edges and touch polygon boundaries at vertices.
+    \end{itemize}
+\end{enumerate}
+\end{problem}
+
+\end{document}
