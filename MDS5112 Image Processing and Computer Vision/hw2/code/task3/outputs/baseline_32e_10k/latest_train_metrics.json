@@ -1,0 +1,9 @@
+{
+  "epoch": 32,
+  "train_loss": 0.03982075323494008,
+  "lr": 1e-05,
+  "epoch_time_sec": 67.68885231018066,
+  "num_steps": 208,
+  "batch_size": 48,
+  "max_train_samples": 10000
+}

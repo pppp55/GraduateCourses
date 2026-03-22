@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{wiki_adaptive_hist_eq}
+Adaptive histogram equalization.
+\newblock \url{https://en.wikipedia.org/wiki/Adaptive_histogram_equalization}.
+\newblock Accessed: 2026-03-22.
+
+\bibitem{da3_arxiv}
+Depth anything 3: Recovering the visual space from any views.
+\newblock \url{https://arxiv.org/abs/2511.10647}.
+\newblock Accessed: 2026-03-22.
+
+\bibitem{wiki_hist_eq}
+Histogram equalization.
+\newblock \url{https://en.wikipedia.org/wiki/Histogram_equalization}.
+\newblock Accessed: 2026-03-22.
+
+\bibitem{pytorch_docs}
+Pytorch documentation.
+\newblock \url{https://pytorch.org/docs/stable/index.html}.
+\newblock Accessed: 2026-03-22.
+
+\bibitem{pytorch_basics}
+Pytorch tutorials: Learn the basics.
+\newblock \url{https://pytorch.org/tutorials/beginner/basics/intro.html}.
+\newblock Accessed: 2026-03-22.
+
+\bibitem{vggt_arxiv}
+Vggt: Visual geometry grounded transformer.
+\newblock \url{https://arxiv.org/abs/2503.11651}.
+\newblock Accessed: 2026-03-22.
+
+\end{thebibliography}

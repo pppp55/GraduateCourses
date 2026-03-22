@@ -1,0 +1,4 @@
+{"epoch": 1, "train_loss": 0.1287286236104058, "lr": 8.681980515339464e-05, "epoch_time_sec": 987.3413007259369, "num_steps": 1666, "batch_size": 48, "max_train_samples": 80000}
+{"epoch": 2, "train_loss": 0.09151919003652066, "lr": 5.5e-05, "epoch_time_sec": 1009.2565405368805, "num_steps": 1666, "batch_size": 48, "max_train_samples": 80000}
+{"epoch": 3, "train_loss": 0.07748598119720262, "lr": 2.3180194846605367e-05, "epoch_time_sec": 988.0766544342041, "num_steps": 1666, "batch_size": 48, "max_train_samples": 80000}
+{"epoch": 4, "train_loss": 0.06869818026922186, "lr": 1e-05, "epoch_time_sec": 1000.8211789131165, "num_steps": 1666, "batch_size": 48, "max_train_samples": 80000}

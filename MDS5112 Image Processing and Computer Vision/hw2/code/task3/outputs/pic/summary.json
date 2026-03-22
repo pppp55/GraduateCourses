@@ -1,0 +1,80 @@
+{
+  "num_train_runs": 5,
+  "num_eval_runs": 7,
+  "train_runs": [
+    {
+      "run_name": "baseline_32e_10k",
+      "epochs": 32,
+      "max_train_samples": 10000,
+      "last_train_loss": 0.03982075323494008
+    },
+    {
+      "run_name": "exp_16e_20k",
+      "epochs": 16,
+      "max_train_samples": 20000,
+      "last_train_loss": 0.04748731780833063
+    },
+    {
+      "run_name": "exp_2e_160k",
+      "epochs": 2,
+      "max_train_samples": 160000,
+      "last_train_loss": 0.08657538538539943
+    },
+    {
+      "run_name": "exp_4e_80k",
+      "epochs": 4,
+      "max_train_samples": 80000,
+      "last_train_loss": 0.06869818026922186
+    },
+    {
+      "run_name": "exp_8e_40k",
+      "epochs": 8,
+      "max_train_samples": 40000,
+      "last_train_loss": 0.05575044623979715
+    }
+  ],
+  "eval_runs": [
+    {
+      "run_name": "baseline_32e_10k",
+      "mode": "baseline",
+      "abs_rel": 0.11584071737307261,
+      "num_batches": 6762
+    },
+    {
+      "run_name": "da3",
+      "mode": "foundation_da3",
+      "abs_rel": 0.032045436849023216,
+      "num_batches": 6762
+    },
+    {
+      "run_name": "exp_16e_20k",
+      "mode": "baseline",
+      "abs_rel": 0.10331111002126166,
+      "num_batches": 6762
+    },
+    {
+      "run_name": "exp_2e_160k",
+      "mode": "baseline",
+      "abs_rel": 0.07766051829181869,
+      "num_batches": 6762
+    },
+    {
+      "run_name": "exp_4e_80k",
+      "mode": "baseline",
+      "abs_rel": 0.08426858692082057,
+      "num_batches": 6762
+    },
+    {
+      "run_name": "exp_8e_40k",
+      "mode": "baseline",
+      "abs_rel": 0.09462125460223064,
+      "num_batches": 6762
+    },
+    {
+      "run_name": "vggt",
+      "mode": "foundation_vggt",
+      "abs_rel": 0.21345281588157136,
+      "num_batches": 6762
+    }
+  ]
+}

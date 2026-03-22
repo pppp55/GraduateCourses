@@ -1,0 +1,18 @@
+{
+  "scannet_root": "data/scannet",
+  "output_dir": "task3/outputs/exp_16e_20k",
+  "train_split_file": "data/scannet/scannetv2_train.txt",
+  "seed": 42,
+  "epochs": 16,
+  "batch_size": 48,
+  "num_workers": 8,
+  "lr": 0.0001,
+  "weight_decay": 0.0001,
+  "image_height": 240,
+  "image_width": 320,
+  "min_depth": 0.1,
+  "max_depth": 10.0,
+  "max_train_samples": 20000,
+  "resume": null,
+  "no_pretrained_backbone": false
+}

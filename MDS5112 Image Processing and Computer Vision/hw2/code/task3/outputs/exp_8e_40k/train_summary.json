@@ -1,0 +1,83 @@
+{
+  "task": "baseline_training",
+  "epochs": 8,
+  "max_train_samples": 40000,
+  "batch_size": 48,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "device": "cuda",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.1383443942823473,
+      "lr": 9.657457896300791e-05,
+      "epoch_time_sec": 488.8780150413513,
+      "num_steps": 833,
+      "batch_size": 48,
+      "max_train_samples": 40000
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.09644509697196578,
+      "lr": 8.681980515339464e-05,
+      "epoch_time_sec": 502.3420708179474,
+      "num_steps": 833,
+      "batch_size": 48,
+      "max_train_samples": 40000
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0828645538364281,
+      "lr": 7.222075445642905e-05,
+      "epoch_time_sec": 500.5020561218262,
+      "num_steps": 833,
+      "batch_size": 48,
+      "max_train_samples": 40000
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.07412275250683598,
+      "lr": 5.5e-05,
+      "epoch_time_sec": 511.0079925060272,
+      "num_steps": 833,
+      "batch_size": 48,
+      "max_train_samples": 40000
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.06791362640898482,
+      "lr": 3.777924554357096e-05,
+      "epoch_time_sec": 497.11127281188965,
+      "num_steps": 833,
+      "batch_size": 48,
+      "max_train_samples": 40000
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.06288660886515232,
+      "lr": 2.3180194846605367e-05,
+      "epoch_time_sec": 504.4673478603363,
+      "num_steps": 833,
+      "batch_size": 48,
+      "max_train_samples": 40000
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.05880289194302685,
+      "lr": 1.3425421036992098e-05,
+      "epoch_time_sec": 500.44691038131714,
+      "num_steps": 833,
+      "batch_size": 48,
+      "max_train_samples": 40000
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.05575044623979715,
+      "lr": 1e-05,
+      "epoch_time_sec": 497.1553318500519,
+      "num_steps": 833,
+      "batch_size": 48,
+      "max_train_samples": 40000
+    }
+  ]
+}

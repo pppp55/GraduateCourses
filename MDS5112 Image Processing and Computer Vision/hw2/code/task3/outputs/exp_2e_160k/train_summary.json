@@ -1,0 +1,29 @@
+{
+  "task": "baseline_training",
+  "epochs": 2,
+  "max_train_samples": 160000,
+  "batch_size": 48,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "device": "cuda",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.12152472381392579,
+      "lr": 5.5e-05,
+      "epoch_time_sec": 1979.458414554596,
+      "num_steps": 3333,
+      "batch_size": 48,
+      "max_train_samples": 160000
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.08657538538539943,
+      "lr": 1e-05,
+      "epoch_time_sec": 1980.5603394508362,
+      "num_steps": 3333,
+      "batch_size": 48,
+      "max_train_samples": 160000
+    }
+  ]
+}
