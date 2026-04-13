@@ -1,0 +1,135 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage{bookmark}
+% \usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings, subfigure}
+\usepackage{grffile}
+\title{\textbf{Homework 4}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item For the weather Markov chain with state order $(S, C, R)$ and
+    \[
+        A =
+        \begin{bmatrix}
+            0.8 & 0.15 & 0.05\\
+            0.38 & 0.6 & 0.02\\
+            0.75 & 0.05 & 0.2
+        \end{bmatrix},
+    \]
+    let $\pi = (\pi_S, \pi_C, \pi_R)$ be the stationary distribution. Solve
+    $\pi = \pi A,\ \pi_S+\pi_C+\pi_R=1$:
+    \begin{align}
+        \pi &= \left(\frac{638}{929},\frac{245}{929},\frac{46}{929}\right)
+        \approx (0.6868, 0.2637, 0.0495). \notag
+    \end{align}
+    Hence for a 4-day sequence $W_1W_2W_3W_4$, its probability is
+    $P(W_1W_2W_3W_4)=\pi_{W_1}A_{W_1W_2}A_{W_2W_3}A_{W_3W_4}$.
+    The most probable sequence is
+    \begin{align}
+        (S,S,S,S),\quad P(S,S,S,S)=\pi_S\cdot 0.8^3 \approx 0.3516. \notag
+    \end{align}
+
+    \item If today is rainy ($R$):
+    \begin{align}
+        P(X_{t+1}=S\mid X_t=R) &= A_{RS}=0.75, \notag\\
+        P(X_{t+2}=S\mid X_t=R) &= {(A^2)}_{RS}
+        =0.75\cdot0.8+0.05\cdot0.38+0.2\cdot0.75
+        =0.769. \notag
+    \end{align}
+
+    \item Let $T_i$ be the expected number of days to reach sunny state $S$ from
+    state $i$. Then $T_S=0$ and
+    \begin{align}
+        T_C &= 1 + 0.6T_C + 0.02T_R, \notag\\
+        T_R &= 1 + 0.2T_R + 0.05T_C. \notag
+    \end{align}
+    Solving gives
+    \begin{align}
+        T_R \approx 1.4107. \notag
+    \end{align}
+    So starting from a rainy day, the expected waiting time to get a sunny day is
+    about $1.41$ days.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}
+    \item For the Bayesian network with variables $B$ (Battery), $F$ (Fuel),
+    $G$ (Gauge), $S$ (Start), the joint distribution decomposition is
+    \begin{align}
+        P(B,F,G,S) = P(B)P(F)P(G\mid B,F)P(S\mid B,F). \notag
+    \end{align}
+    \item Given $P(B=bad)=0.1$, $P(F=empty)=0.2$:
+    \begin{align}
+        P(B=good,F=empty,G=empty,S=yes)
+        &= 0.9\times0.2\times0.8\times0.2
+        = 0.0288, \notag\\
+        P(B=bad,F=empty,G=not\ empty,S=no)
+        &= 0.1\times0.2\times0.1\times1.0
+        = 0.0020. \notag
+    \end{align}
+    Also,
+    \begin{align}
+        P(S=yes\mid B=bad)
+        &= \sum_{f\in\{empty,not\ empty\}}P(S=yes\mid B=bad,f)P(f) \notag\\
+        &= 0\cdot0.2 + 0.1\cdot0.8 = 0.08.
+        \notag
+    \end{align}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}
+    \item For the Bayesian network with $M\to E$, and $(E,A)\to C$:
+    \begin{align}
+        P(M,E,A,C)=P(M)P(A)P(E\mid M)P(C\mid E,A). \notag
+    \end{align}
+    \item From the 40 training instances (MLE estimates):
+    \begin{align}
+        &P(M=Hi)=\frac{20}{40}=0.5,\quad P(M=Lo)=0.5, \notag\\
+        &P(A=Working)=\frac{25}{40}=0.625,\quad P(A=Broken)=0.375. \notag
+    \end{align}
+    \begin{align}
+        &P(E=Good\mid M=Hi)=\frac{10}{20}=0.5,
+        \quad P(E=Bad\mid M=Hi)=0.5, \notag\\
+        &P(E=Good\mid M=Lo)=\frac{15}{20}=0.75,
+        \quad P(E=Bad\mid M=Lo)=0.25. \notag
+    \end{align}
+    Integrating out $M$ for $P(C\mid E,A)$:
+    \begin{align}
+        &P(C=Hi\mid E=Good,A=Working)=\frac{3+9}{3+4+9+0}=\frac{12}{16}=0.75, \notag\\
+        &P(C=Hi\mid E=Good,A=Broken)=\frac{1+5}{1+2+5+1}=\frac{6}{9}=\frac{2}{3}, \notag\\
+        &P(C=Hi\mid E=Bad,A=Working)=\frac{1+1}{1+5+1+2}=\frac{2}{9}, \notag\\
+        &P(C=Hi\mid E=Bad,A=Broken)=\frac{0+0}{0+4+0+2}=0. \notag
+    \end{align}
+    Therefore,
+    \begin{align}
+        P(C=Lo\mid E,A)=1-P(C=Hi\mid E,A). \notag
+    \end{align}
+    \item For $P(E=Bad,A=Broken)$:
+    \begin{align}
+        P(E=Bad,A=Broken)
+        &= P(A=Broken)\sum_m P(m)P(E=Bad\mid m) \notag\\
+        &= 0.375\times(0.5\times0.5 + 0.5\times0.25)
+        = 0.140625.
+        \notag
+    \end{align}
+\end{enumerate}
+\end{problem}
+
+\end{document}

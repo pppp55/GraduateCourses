@@ -2,6 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
 \usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{bookmark}
 \usepackage{graphicx, minted, listings, subfigure}
 \usepackage{grffile}
 \title{\textbf{Homework 1}}
