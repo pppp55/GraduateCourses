@@ -1,0 +1,162 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, bookmark, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain, fontset = none]{ctex}
+\usepackage{listings, subfigure}
+\usepackage{grffile}
+\title{\textbf{Homework 3}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item Prove (using words) whether the proposition
+    \[
+        ((a \lor b) \land (\neg a \lor c)) \to \neg(b \lor c)
+    \]
+    is valid.
+
+    \begin{solution}
+    This proposition is \textbf{not} valid (not a tautology).  
+    Give a counterexample:
+    \[
+        a = \text{F},\quad b = \text{T},\quad c = \text{F}.
+    \]
+    Then
+    \[
+        (a \lor b) = \text{T},\quad (\neg a \lor c)=\text{T},
+    \]
+    so the antecedent is true. But
+    \[
+        \neg(b \lor c) = \neg(\text{T} \lor \text{F})=\neg\text{T}=\text{F}.
+    \]
+    Therefore ``true $\to$ false'' is false. So the proposition is not valid.
+    \end{solution}
+
+    \item Use propositional resolution to show that the clause set
+    \[
+    \{p,q,\neg r,s\},\ \{\neg p,r,s\},\ \{\neg q,\neg r\},\ \{p,\neg s\},\ \{\neg p,\neg r\},\ \{r\}
+    \]
+    is unsatisfiable.
+
+    \begin{solution}
+    Let the clauses be
+    \[
+    \begin{aligned}
+    C_1&=(p \lor q \lor \neg r \lor s), \\
+    C_2&=(\neg p \lor r \lor s), \\
+    C_3&=(\neg q \lor \neg r), \\
+    C_4&=(p \lor \neg s), \\
+    C_5&=(\neg p \lor \neg r), \\
+    C_6&=(r).
+    \end{aligned}
+    \]
+    Resolve step by step:
+    \[
+    \begin{aligned}
+    C_3,\ C_6 &\vdash (\neg q) \qquad\quad\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, (R_1)\\
+    C_5,\ C_6 &\vdash (\neg p) \qquad\quad\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, (R_2)\\
+    C_4,\ R_2 &\vdash (\neg s) \qquad\quad\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, (R_3)\\
+    C_1,\ C_6 &\vdash (p \lor q \lor s) \qquad\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, (R_4)\\
+    R_4,\ R_1 &\vdash (p \lor s) \qquad\quad\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, (R_5)\\
+    R_5,\ R_2 &\vdash (s) \qquad\qquad\quad\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, (R_6)\\
+    R_6,\ R_3 &\vdash \Box
+    \end{aligned}
+    \]
+    We derived the empty clause $\Box$, so the clause set is unsatisfiable.
+    \end{solution}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item How many of the disjunctions
+    \[
+    p \lor \neg q,\quad \neg p \lor q,\quad q \lor r,\quad q \lor \neg r,\quad \neg q \lor \neg r
+    \]
+    can be made simultaneously true?
+
+    \begin{solution}
+    All \textbf{five} can be true simultaneously.  
+    One satisfying assignment is
+    \[
+        p=\text{T},\quad q=\text{T},\quad r=\text{F}.
+    \]
+    Check:
+    \[
+    \begin{aligned}
+    p\lor\neg q &= \text{T}\lor\text{F}=\text{T},\\
+    \neg p\lor q &= \text{F}\lor\text{T}=\text{T},\\
+    q\lor r &= \text{T}\lor\text{F}=\text{T},\\
+    q\lor\neg r &= \text{T}\lor\text{T}=\text{T},\\
+    \neg q\lor\neg r &= \text{F}\lor\text{T}=\text{T}.
+    \end{aligned}
+    \]
+    So the maximum number is $5$.
+    \end{solution}
+
+    \item In standard mathematics, can
+    \[
+        x=y,\quad y=z,\quad z=-x
+    \]
+    hold simultaneously?  
+    In propositional logic, consider
+    \[
+        A\Rightarrow B,\quad B\Rightarrow C,\quad C\Rightarrow \neg A.
+    \]
+    Decide:
+    \begin{enumerate}[label=\roman*.]
+        \item They cannot be true simultaneously in all cases?
+        \item They can be true simultaneously in some cases?
+        \item They can be true simultaneously in all cases?
+    \end{enumerate}
+
+    \begin{solution}
+    \textbf{Mathematics part.}  
+    From $x=y$ and $y=z$, we get $x=z$. Together with $z=-x$, we get $x=-x$, hence $2x=0$, so $x=0$. Then $y=z=0$.  
+    Therefore they \textbf{can} hold simultaneously, but only for
+    \[
+        x=y=z=0.
+    \]
+
+    \textbf{Propositional logic part.}  
+    Let
+    \[
+        F=(A\Rightarrow B)\land(B\Rightarrow C)\land(C\Rightarrow\neg A).
+    \]
+    Truth table:
+    \[
+    \begin{array}{ccccccc}
+    A & B & C & A\Rightarrow B & B\Rightarrow C & C\Rightarrow\neg A & F\\
+    \hline
+    T & T & T & T & T & F & F\\
+    T & T & F & T & F & T & F\\
+    T & F & T & F & T & F & F\\
+    T & F & F & F & T & T & F\\
+    F & T & T & T & T & T & T\\
+    F & T & F & T & F & T & F\\
+    F & F & T & T & T & T & T\\
+    F & F & F & T & T & T & T
+    \end{array}
+    \]
+    Conclusions:
+    \begin{enumerate}[label=\roman*.]
+        \item Yes. They are \textbf{not} true in all cases (for example $A=B=C=T$ makes $F$ false).
+        \item Yes. They are true in some cases (for example $A=B=C=F$ makes $F$ true).
+        \item No. They are not true in all cases.
+    \end{enumerate}
+    \end{solution}
+\end{enumerate}
+\end{problem}
+
+\end{document}
