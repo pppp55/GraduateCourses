@@ -1,0 +1,69 @@
+{
+  "student_id": "225040065",
+  "seed": 225040065,
+  "tasks": [
+    "mrpc",
+    "sst2"
+  ],
+  "summaries": [
+    {
+      "task": "mrpc",
+      "student_id": "225040065",
+      "seed": 225040065,
+      "model": "prajjwal1/bert-mini",
+      "tokenizer": "bert-base-uncased",
+      "epochs": 2.0,
+      "batch_size": 32,
+      "max_length": 100,
+      "train_runtime": {
+        "train_runtime": 6.8825,
+        "train_samples_per_second": 1065.898,
+        "train_steps_per_second": 33.418,
+        "total_flos": 14198936572800.0,
+        "train_loss": 0.577960553376571,
+        "epoch": 2.0
+      },
+      "final_eval": {
+        "eval_loss": 0.5336557030677795,
+        "eval_accuracy": 0.7475490196078431,
+        "eval_f1": 0.8352,
+        "eval_runtime": 0.1151,
+        "eval_samples_per_second": 3545.18,
+        "eval_steps_per_second": 112.959,
+        "epoch": 2.0
+      },
+      "prediction_count": 408,
+      "correct_count": 305,
+      "incorrect_count": 103
+    },
+    {
+      "task": "sst2",
+      "student_id": "225040065",
+      "seed": 225040065,
+      "model": "prajjwal1/bert-mini",
+      "tokenizer": "bert-base-uncased",
+      "epochs": 2.0,
+      "batch_size": 32,
+      "max_length": 64,
+      "train_runtime": {
+        "train_runtime": 89.7045,
+        "train_samples_per_second": 1501.574,
+        "train_steps_per_second": 46.932,
+        "total_flos": 166854382419456.0,
+        "train_loss": 0.32623565021433343,
+        "epoch": 2.0
+      },
+      "final_eval": {
+        "eval_loss": 0.3742320239543915,
+        "eval_accuracy": 0.8520642201834863,
+        "eval_runtime": 0.2539,
+        "eval_samples_per_second": 3433.842,
+        "eval_steps_per_second": 110.261,
+        "epoch": 2.0
+      },
+      "prediction_count": 872,
+      "correct_count": 743,
+      "incorrect_count": 129
+    }
+  ]
+}

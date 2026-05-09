@@ -1,0 +1,107 @@
+
+------------------------------
+Project 1 and 2 files:
+------------------------------
+
+Read Me.txt :   this txt file
+
+projects1and2-details :    details of where to get the codes and run the two models
+
+Project 1 and 2 Evaluations.pdf  :  details of the 3 NLP task evaluations 
+Project_1_and_2_evaluation_Yue_Lin s.pdf  :  additional description of the 3 NLP task evaluations 
+
+----------------   sample pythorn codes  for NLP taks KNN similarity evaluation ------------------
+
+evaluateCD.py
+K-Nearest-Neighbor-template-py
+
+----------------   sample pythorn codes  for NLP golden standard similarity evaluation ------------------
+
+simlex-999 golden standard template.py
+simlex-999 golden standard templateLLY.py
+
+----------------   sample pythorn codes  for NLP analogical reasoning task evaluation ------------------
+
+analogical reasoning template.py
+
+------------------   data for  NLP KNN similarity evaluationn  ---------------
+The 50 words in evaluateCD.py
+
+   word_list = ["july", "reliable", "play", "willing", "good", "very", "patient",    ...
+
+are the query words students should use. You compute  the top 10 closest words for each query word.
+
+Student should randomly (use student ID, see inside pythorn code) pick 4 words among the above 
+    to give detailed explanations or comments about the founded similarity words
+    as explained in  Project 1 and 2 Evaluations
+
+------------------   data for  NLP Golden standards evaluation  ---------------
+
+simlex999.txt :     contains 1001 lines, each line has two words and their human assessed similarity in [0 10]
+
+old	new	1.58
+smart	intelligent	9.2
+hard	difficult	8.77
+happy	cheerful	9.55
+hard	easy	0.95
+fast	rapid	8.75
+
+------------------   data for  NLP  Analogical reasoning task evaluation  ---------------
+
+analogical reasoning task.txt :   contains analogical words for evaluation, including
+
+: capital-common-countries
+Athens Greece Baghdad Iraq          check   vec(Athens) - vec(Greece) = vec(Baghdad ) - vec(kwanza) 
+Athens Greece Bangkok Thailand
+gram9-plural-verbs
+
+: currency                                    
+Algeria dinar Angola kwanza     check   vec(Algeria) -  vec(dina) = vec(Angola) - vec(kwanza) 
+Algeria dinar Argentina peso
+Algeria dinar Armenia dram
+Algeria dinar Brazil real
+
+: capital-world                                      
+Abuja Nigeria Accra Ghana
+Abuja Nigeria Algiers Algeria
+Abuja Nigeria Amman Jordan
+Abuja Nigeria Ankara Turkey
+
+: city-in-state                                        
+Chicago Illinois Houston Texas
+Chicago Illinois Philadelphia Pennsylvania
+Chicago Illinois Phoenix Arizona
+Chicago Illinois Dallas Texas
+
+: family
+boy girl brother sister
+boy girl brothers sisters
+boy girl dad mom
+boy girl father mother
+
+: gram1-adjective-to-adverb
+amazing amazingly apparent apparently
+amazing amazingly calm calmly
+amazing amazingly cheerful cheerfully
+amazing amazingly complete completely
+
+: gram2-opposite
+acceptable unacceptable aware unaware
+acceptable unacceptable certain uncertain
+acceptable unacceptable clear unclear
+acceptable unacceptable comfortable uncomfortable
+
+: gram3-comparative
+bad worse big bigger
+bad worse bright brighter
+bad worse cheap cheaper
+bad worse cold colder
+
+: gram4-superlative
+bad worst big biggest
+bad worst bright brightest
+bad worst cold coldest
+bad worst cool coolest
+
+-------------------------------------   END  ------------------------------------
+Chris Ding, 2026-04-22

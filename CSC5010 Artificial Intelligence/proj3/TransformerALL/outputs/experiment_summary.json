@@ -1,0 +1,29 @@
+{
+  "student_id": "225040065",
+  "seed": 225040065,
+  "epochs": 6,
+  "summaries": [
+    {
+      "task": "taskA",
+      "test_accuracy": 0.8468,
+      "test_loss": 0.493173623085022,
+      "misclassified_count": 383,
+      "predictions_path": "D:\\codes\\GraduateCourses\\CSC5010 Artificial Intelligence\\proj3\\TransformerALL\\outputs\\taskA\\taskA_predictions.csv",
+      "misclassified_path": "D:\\codes\\GraduateCourses\\CSC5010 Artificial Intelligence\\proj3\\TransformerALL\\outputs\\taskA\\taskA.misclassified.csv",
+      "metrics_path": "D:\\codes\\GraduateCourses\\CSC5010 Artificial Intelligence\\proj3\\TransformerALL\\outputs\\taskA\\taskA_metrics.txt"
+    },
+    {
+      "task": "taskB",
+      "test_accuracy": 0.8424,
+      "test_loss": 0.5703117787837982,
+      "misclassified_count": 394,
+      "predictions_path": "D:\\codes\\GraduateCourses\\CSC5010 Artificial Intelligence\\proj3\\TransformerALL\\outputs\\taskB\\taskB_predictions.csv",
+      "misclassified_path": "D:\\codes\\GraduateCourses\\CSC5010 Artificial Intelligence\\proj3\\TransformerALL\\outputs\\taskB\\taskB.misclassified.csv",
+      "metrics_path": "D:\\codes\\GraduateCourses\\CSC5010 Artificial Intelligence\\proj3\\TransformerALL\\outputs\\taskB\\taskB_metrics.txt"
+    }
+  ],
+  "comparison": {
+    "taskA_wrong_taskB_correct": 138,
+    "taskB_wrong_taskA_correct": 149
+  }
+}

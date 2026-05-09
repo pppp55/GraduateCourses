@@ -1,0 +1,50 @@
+{
+  "best_global_step": 2105,
+  "best_metric": 0.838302752293578,
+  "best_model_checkpoint": "outputs\\sst2\\trainer\\checkpoint-2105",
+  "epoch": 1.0,
+  "eval_steps": 500,
+  "global_step": 2105,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 1.0,
+      "grad_norm": 10.90795612335205,
+      "learning_rate": 1.667458432304038e-05,
+      "loss": 0.3975,
+      "step": 2105
+    },
+    {
+      "epoch": 1.0,
+      "eval_accuracy": 0.838302752293578,
+      "eval_loss": 0.38270241022109985,
+      "eval_runtime": 0.2192,
+      "eval_samples_per_second": 3978.948,
+      "eval_steps_per_second": 127.764,
+      "step": 2105
+    }
+  ],
+  "logging_steps": 500,
+  "max_steps": 4210,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 2,
+  "save_steps": 500,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": false
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 83427191209728.0,
+  "train_batch_size": 32,
+  "trial_name": null,
+  "trial_params": null
+}

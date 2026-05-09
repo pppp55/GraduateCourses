@@ -1,0 +1,46 @@
+{
+  "task": "sst2",
+  "student_id": "225040065",
+  "seed": 225040065,
+  "model": "prajjwal1/bert-mini",
+  "tokenizer": "bert-base-uncased",
+  "epochs": 2.0,
+  "batch_size": 32,
+  "max_length": 64,
+  "train_runtime": {
+    "train_runtime": 89.7045,
+    "train_samples_per_second": 1501.574,
+    "train_steps_per_second": 46.932,
+    "total_flos": 166854382419456.0,
+    "train_loss": 0.32623565021433343,
+    "epoch": 2.0
+  },
+  "final_eval": {
+    "eval_loss": 0.3742320239543915,
+    "eval_accuracy": 0.8520642201834863,
+    "eval_runtime": 0.2539,
+    "eval_samples_per_second": 3433.842,
+    "eval_steps_per_second": 110.261,
+    "epoch": 2.0
+  },
+  "prediction_count": 872,
+  "correct_count": 743,
+  "incorrect_count": 129
+}
+
+Classification report:
+              precision    recall  f1-score   support
+
+    negative     0.8585    0.8364    0.8473       428
+    positive     0.8462    0.8671    0.8565       444
+
+    accuracy                         0.8521       872
+   macro avg     0.8523    0.8518    0.8519       872
+weighted avg     0.8522    0.8521    0.8520       872
+
+
+Selected practical examples:
+{"index": 253, "true_label": 0, "true_label_name": "negative", "predicted_label": 1, "predicted_label_name": "positive", "confidence": 0.6608306765556335, "correct": 0, "sentence": "if you believe any of this , i can make you a real deal on leftover enron stock that will double in value a week from friday . "}
+{"index": 468, "true_label": 1, "true_label_name": "positive", "predicted_label": 1, "predicted_label_name": "positive", "confidence": 0.990138053894043, "correct": 1, "sentence": "the characters are interesting and often very creatively constructed from figure to backstory . "}
+{"index": 482, "true_label": 1, "true_label_name": "positive", "predicted_label": 0, "predicted_label_name": "negative", "confidence": 0.7077838778495789, "correct": 0, "sentence": "cq 's reflection of artists and the love of cinema-and-self suggests nothing less than a new voice that deserves to be considered as a possible successor to the best european directors . "}
+{"index": 772, "true_label": 1, "true_label_name": "positive", "predicted_label": 1, "predicted_label_name": "positive", "confidence": 0.9526823163032532, "correct": 1, "sentence": "not the kind of film that will appeal to a mainstream american audience , but there is a certain charm about the film that makes it a suitable entry into the fest circuit . "}

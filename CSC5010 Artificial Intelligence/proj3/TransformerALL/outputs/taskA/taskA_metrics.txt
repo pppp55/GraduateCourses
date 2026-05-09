@@ -1,0 +1,47 @@
+Task: taskA
+Preprocessing: none
+Device: cuda
+Epochs: 6
+Vocabulary size: 4205
+Train/dev/test sizes: 45000/2500/2500
+
+Epoch logs:
+Epoch 1/6 | batches=352 | train_loss=1.2256 | last_batch_train_acc=0.7083 | dev_loss=0.9669 | dev_acc=0.7112 | time=0:00:05
+Epoch 2/6 | batches=704 | train_loss=0.7722 | last_batch_train_acc=0.8472 | dev_loss=0.7430 | dev_acc=0.7856 | time=0:00:10
+Epoch 3/6 | batches=1056 | train_loss=0.6440 | last_batch_train_acc=0.8333 | dev_loss=0.7994 | dev_acc=0.7788 | time=0:00:14
+Epoch 4/6 | batches=1408 | train_loss=0.5644 | last_batch_train_acc=0.8194 | dev_loss=0.8450 | dev_acc=0.7768 | time=0:00:19
+Epoch 5/6 | batches=1760 | train_loss=0.5103 | last_batch_train_acc=0.9028 | dev_loss=0.7678 | dev_acc=0.7952 | time=0:00:23
+Epoch 6/6 | batches=2112 | train_loss=0.4639 | last_batch_train_acc=0.9167 | dev_loss=0.7744 | dev_acc=0.8028 | time=0:00:28
+
+Test Loss: 0.493174
+Test Accuracy: 0.846800
+
+Precision, Recall and F1-Score:
+              precision    recall  f1-score   support
+
+          财经     0.9730    0.7940    0.8744       500
+          房产     0.0000    0.0000    0.0000         0
+          股票     0.0000    0.0000    0.0000         0
+          教育     0.9762    0.9040    0.9387      1000
+          科技     0.0000    0.0000    0.0000         0
+          社会     0.0000    0.0000    0.0000         0
+          时政     0.0000    0.0000    0.0000         0
+          体育     0.0000    0.0000    0.0000         0
+          游戏     0.0000    0.0000    0.0000         0
+          娱乐     0.9784    0.8160    0.8899      1000
+
+    accuracy                         0.8468      2500
+   macro avg     0.2928    0.2514    0.2703      2500
+weighted avg     0.9765    0.8468    0.9063      2500
+
+Confusion Matrix:
+[[397  11  81   4   1   2   1   0   1   2]
+ [  0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0]
+ [  2   9  32 904   8  17   8   0   4  16]
+ [  0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0]
+ [  9  12  34  18  21  21   3   6  60 816]]
